@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-02-20 06:16:38
+/* Smarty version 4.5.4, created on 2025-02-20 12:32:20
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\ListViewRecordActions.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67b6c8c6d97636_57919209',
+  'unifunc' => 'content_67b720d4ebff50_72590462',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67b6c8c6d97636_57919209 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67b720d4ebff50_72590462 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!--LIST VIEW RECORD ACTIONS--><div class="table-actions"><?php if (!$_smarty_tpl->tpl_vars['SEARCH_MODE_RESULTS']->value) {?><span class="input" ><input type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['LISTVIEW_ENTRY']->value->getId();?>
 " class="listViewEntriesCheckBox"/></span><?php }
 if ($_smarty_tpl->tpl_vars['LISTVIEW_ENTRY']->value->get('starred') == vtranslate('LBL_YES',$_smarty_tpl->tpl_vars['MODULE']->value)) {

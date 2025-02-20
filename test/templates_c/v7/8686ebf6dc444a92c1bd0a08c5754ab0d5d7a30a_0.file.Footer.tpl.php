@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-02-20 05:39:17
+/* Smarty version 4.5.4, created on 2025-02-20 12:16:40
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\Footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67b6c005cbb183_88845810',
+  'unifunc' => 'content_67b71d2847ded8_06555645',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67b6c005cbb183_88845810 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67b71d2847ded8_06555645 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <footer class="app-footer">
 	<p>

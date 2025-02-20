@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-02-20 07:50:15
+/* Smarty version 4.5.4, created on 2025-02-20 12:52:14
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Settings\Picklist\EditView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67b6deb7029de4_98683981',
+  'unifunc' => 'content_67b7257e72f3c6_72013398',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67b6deb7029de4_98683981 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67b7257e72f3c6_72013398 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="modal-dialog"><div class='modal-content'><?php ob_start();
 echo vtranslate('LBL_EDIT_PICKLIST_ITEM',$_smarty_tpl->tpl_vars['QUALIFIED_MODULE']->value);

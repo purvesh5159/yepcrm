@@ -99,11 +99,13 @@ $languageStrings = array(
 	//Portal shortcuts
 	'LBL_ADD_DOCUMENT'=>"Add Document",
 	'LBL_OPEN_TICKETS'=>"Open AMCs",
-	'LBL_CREATE_TICKET'=>"Create Ticket",
+	'LBL_CREATE_TICKET'=>"Create AMC",
+	'Description'=>'Remarks',
+	'LBL_DESCRIPTION_INFORMATION'=>'Remarks Details'
 );
 
 $jsLanguageStrings=array(
 	'LBL_ADD_DOCUMENT'=>'Add Document',
 	'LBL_OPEN_TICKETS'=>'Open AMCs',
-	'LBL_CREATE_TICKET'=>'Create Ticket'
+	'LBL_CREATE_TICKET'=>'Create AMC'
 );

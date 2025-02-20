@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-02-20 06:16:34
+/* Smarty version 4.5.4, created on 2025-02-20 12:16:37
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\Tag.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67b6c8c270e846_45217402',
+  'unifunc' => 'content_67b71d256cf006_26880990',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67b6c8c270e846_45217402 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67b71d256cf006_26880990 (Smarty_Internal_Template $_smarty_tpl) {
 ?> 
  <span class="tag <?php if ($_smarty_tpl->tpl_vars['ACTIVE']->value == true) {?> active <?php }?>" title="<?php echo $_smarty_tpl->tpl_vars['TAG_MODEL']->value->getName();?>
 " data-type="<?php echo $_smarty_tpl->tpl_vars['TAG_MODEL']->value->getType();?>

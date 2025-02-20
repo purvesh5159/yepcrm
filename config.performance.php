@@ -10,11 +10,11 @@
 /* Performance paramters can be configured to fine tune vtiger CRM runtime */
 $PERFORMANCE_CONFIG = Array(
 	// Enable Vtiger Log Level for debugging only if requried 
-	'LOGLEVEL_DEBUG' => false,
+	'LOGLEVEL_DEBUG' => true,
 
 	// Should the caller information be captured in SQL Logging?
 	// It adds little overhead for performance but will be useful to debug
-	'SQL_LOG_INCLUDE_CALLER' => false,
+	'SQL_LOG_INCLUDE_CALLER' => true,
 
 	// If database default charset is UTF-8, set this to true 
 	// This avoids executing the SET NAMES SQL for each query!

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-02-20 06:27:41
+/* Smarty version 4.5.4, created on 2025-02-20 13:13:48
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\DetailViewHeaderFieldsView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67b6cb5d949509_28745812',
+  'unifunc' => 'content_67b72a8cd5eda7_00055566',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67b6cb5d949509_28745812 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67b72a8cd5eda7_00055566 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <form id="headerForm" method="POST"><?php $_smarty_tpl->_assignInScope('FIELDS_MODELS_LIST', $_smarty_tpl->tpl_vars['MODULE_MODEL']->value->getFields());
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['FIELDS_MODELS_LIST']->value, 'FIELD_MODEL');

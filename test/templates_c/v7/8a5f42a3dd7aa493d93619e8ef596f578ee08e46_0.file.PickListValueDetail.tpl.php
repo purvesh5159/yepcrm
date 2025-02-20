@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-02-20 07:49:35
+/* Smarty version 4.5.4, created on 2025-02-20 12:51:59
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Settings\Picklist\PickListValueDetail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67b6de8f8c0566_89793265',
+  'unifunc' => 'content_67b7256f078c50_85419120',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67b6de8f8c0566_89793265 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67b7256f078c50_85419120 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('PICKLIST_COLOR_MAP', Settings_Picklist_Module_Model::getPicklistColorMap($_smarty_tpl->tpl_vars['SELECTED_PICKLIST_FIELDMODEL']->value->getName()));?><style type="text/css"><?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PICKLIST_COLOR_MAP']->value, 'PICKLIST_COLOR', false, 'PICKLIST_KEY_ID');
 $_smarty_tpl->tpl_vars['PICKLIST_COLOR']->do_else = true;

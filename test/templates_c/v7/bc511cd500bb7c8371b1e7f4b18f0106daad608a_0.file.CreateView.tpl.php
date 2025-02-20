@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-02-20 07:49:35
+/* Smarty version 4.5.4, created on 2025-02-20 12:51:59
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Settings\Picklist\CreateView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67b6de8fdd4d48_00806795',
+  'unifunc' => 'content_67b7256f546464_74445168',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67b6de8fdd4d48_00806795 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67b7256f546464_74445168 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="modalContents"><div class="modal-dialog basicCreateView"><div class='modal-content'><form name="addItemForm" class="form-horizontal" method="post" action="index.php"><input type="hidden" name="module" value="<?php echo $_smarty_tpl->tpl_vars['MODULE']->value;?>
 " /><input type="hidden" name="parent" value="Settings" /><input type="hidden" name="source_module" value="<?php echo $_smarty_tpl->tpl_vars['SELECTED_MODULE_NAME']->value;?>
 " /><input type="hidden" name="action" value="SaveAjax" /><input type="hidden" name="mode" value="add" /><input type="hidden" name="picklistName" value="<?php echo $_smarty_tpl->tpl_vars['SELECTED_PICKLIST_FIELDMODEL']->value->get('name');?>

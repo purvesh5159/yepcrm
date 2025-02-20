@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-02-20 06:16:36
+/* Smarty version 4.5.4, created on 2025-02-20 12:16:38
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\PicklistColorMap.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67b6c8c4c89636_82134691',
+  'unifunc' => 'content_67b71d26e26f41_71816216',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67b6c8c4c89636_82134691 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67b71d26e26f41_71816216 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <style type="text/css">
     <?php
