@@ -48,6 +48,10 @@ body{
 .floatThead-wrapper .table-container{
     border-color:transparent;
 }
+
+.table-container{
+    margin-top: 50px !important;
+}
 .global-nav {
     /*background: #2c3b49!important;*/
 }
@@ -760,8 +764,6 @@ thead{
     }
 }
 
-
-
 /*17-02-2022*/
 
 .app-menu {
@@ -771,8 +773,8 @@ thead{
 .app-menu .app-list .dropdown {
     background-color: #fff!important;
     color: #555!important;
-    margin-top: 5.5%!important;
-    margin-bottom: 5.5%!important;
+    margin-top: 4.5%!important;
+    margin-bottom: 4.5%!important;
 }
 .app-switcher-container .app-navigator {
     background-color: #fff!important;
@@ -783,6 +785,8 @@ thead{
 .app-menu .app-modules-dropdown {
     color: #555!important;
     background-color: #fff!important;
+    margin-top: 4.5%!important;
+    margin-bottom: 4.5%!important;
 }
 .app-menu .app-modules-dropdown li a {
     color: #555!important;

@@ -9,20 +9,20 @@
  *************************************************************************************/
 $languageStrings = array(
 	// Basic Strings
-	'Vendors' => 'Vendors',
-	'SINGLE_Vendors' => 'Vendor',
-	'LBL_ADD_RECORD' => 'Add Vendor',
-	'LBL_RECORDS_LIST' => 'Vendors List',
+	'Vendors' => 'Dealers',
+	'SINGLE_Vendors' => 'Dealer',
+	'LBL_ADD_RECORD' => 'Add Dealer',
+	'LBL_RECORDS_LIST' => 'Dealers List',
 
 	// Blocks
-	'LBL_VENDOR_INFORMATION' => 'Vendor Details',
+	'LBL_VENDOR_INFORMATION' => 'Dealer Details',
 	'LBL_VENDOR_ADDRESS_INFORMATION' => 'Address Details',
 
 	//Field Labels
-	'Vendor Name' => 'Vendor Name',
-	'Vendor No' => 'Vendor Number',
+	'Vendor Name' => 'Dealer Name',
+	'Vendor No' => 'Dealer Number',
 	'Website' => 'Website',
-	'GL Account' => 'GL Account',
+	'GL Account' => 'Dealer Category',
 	'Phone' => 'Primary Phone',
 	'Email' => 'Primary Email',
 
@@ -41,6 +41,6 @@ $languageStrings = array(
 
 $jsLanguageStrings = array(
 	'LBL_RELATED_RECORD_DELETE_CONFIRMATION' => 'Are you sure you want to delete?',
-	'LBL_DELETE_CONFIRMATION' => 'Deleting this Vendor will remove its related PurchaseOrders. Are you sure you want to delete this Vendor?',
-	'LBL_MASS_DELETE_CONFIRMATION' => 'Deleting this vendor(s) will remove its related Purchase Orders. Are you sure you want to delete the selected Records?',
+	'LBL_DELETE_CONFIRMATION' => 'Deleting this Dealer will remove its related PurchaseOrders. Are you sure you want to delete this Vendor?',
+	'LBL_MASS_DELETE_CONFIRMATION' => 'Deleting this Dealer(s) will remove its related Purchase Orders. Are you sure you want to delete the selected Records?',
 );

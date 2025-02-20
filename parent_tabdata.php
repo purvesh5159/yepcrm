@@ -6,7 +6,7 @@
 $parent_tab_info_array=array(1=>'My Home Page',2=>'Marketing',3=>'Sales',4=>'Support',5=>'Analytics',6=>'Inventory',7=>'Tools',8=>'Settings');
 
 
-$parent_child_tab_rel_array=array(1=>array(3,9,),2=>array(6,4,9,8,),3=>array(6,4,20,22,23,8,9,),4=>array(13,6,4,8,9,35,35,),5=>array(25,1,),6=>array(14,18,21,22,20,23,36,36,38,38,),7=>array(8,40,40,46,46,40,46,),8=>array(49,49,),);
+$parent_child_tab_rel_array=array(1=>array(3,9,),2=>array(6,4,9,8,),3=>array(6,4,20,22,23,8,9,),4=>array(13,6,4,8,9,35,35,),5=>array(25,1,),6=>array(14,18,21,22,20,23,36,36,38,38,),7=>array(8,40,40,46,46,40,46,50,50,52,52,55,55,),8=>array(49,49,51,51,53,53,54,54,),);
 
 
 
