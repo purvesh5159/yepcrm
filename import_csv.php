@@ -42,38 +42,108 @@ if (isset($_POST['upload']) && isset($_FILES['csv_file'])) {
             fgetcsv($handle, 1000, ',');
             // Loop through each line of the CSV file
             while (($data = fgetcsv($handle, 1000, ',')) !== FALSE) {
+
                 // Ensure there is valid data in the row
                     if(!empty($data)){
                     // Process the row
-                    $email = $data[0];
-                    $firstname = $data[1];
-                    $lastname = $data[2];
-                    $accountname = $data[3];
-                    $phone = $data[4];
-                    $ticket_title = $data[5];
+                    $boid = $data[0];
+                    $sapcode = $data[1];
+                    $custcode = $data[2];
+                    $depocode = $data[3];
+                    $depotname = $data[4];
+                    $zone = $data[5];
+                    $servicecord = $data[6];
+                    //orgisation
+                    $orgname = $data[7];
+                    //contacts
+                    $custname = $data[8];
+                    $address = $data[9];
+                    $city = $data[10];
+                    $pin = $data[11];
+                    $state = $data[12];
+
+                    $typeofmc = $data[13];
+                    $model = $data[14];
+                    $mserialno = $data[15];
+                    $doin = DateTime::createFromFormat('j-F-y', $data[16]);  
+                    $doi = $doin->format('Y-m-d');
+
+                    //dealer
+                    $dcategory = $data[17];
+                    $deaname = $data[18];
+                    $deamob = $data[19];
+
+                    //engineer
+                    $engname = $data[20];
+                    $engcode = $data[21];
+                    $engmob = $data[22];
+
+                    $serlocation = $data[23];
+                    $tat = $data[24];
+                    $gdata = $data[25];
+                    $conn = $data[26];
+                    $devdetails = $data[27];
+                    $gyrodetails = $data[28];
+                    $gyromodel = $data[29];
+                    $gyroserialno = $data[30];
+                    $upsdetails = $data[31];
+                    $upsserialno = $data[32];
+                    $warmonth = $data[33];
+                    $sdate = DateTime::createFromFormat('j-F-y', $data[34]);  
+                    $wsddate = $sdate->format('Y-m-d');
+                    $edate = DateTime::createFromFormat('j-F-y', $data[35]);  
+                    $weddate = $edate->format('Y-m-d');
+                    $staus = $data[36];
+                    $remarks = $data[37];
 
                     // Check if account and contact exist
-                    $accval = isaccRecordExits($email, $accountname);
-                    $val = isRecordExits($email, $firstname, $lastname);
+                    $accval = isaccRecordExits($orgname);
+                    $val = isRecordExits($lastname,$address,$state,$city,$pin);
+                    $engval = isengRecordExits($engname,$engcode);
+                    $deaval = isdelRecordExits($deaname,$deamob);
+
+                       // Check and create or update Engineer
+                    if (empty($engval)) {
+                        // Create a new Account
+                        $Engineer = CRMEntity::getInstance('Engineer');
+                        $Engineer->column_fields['assigned_user_id'] = 1;
+                        $Engineer->column_fields['engineer_code'] = $engcode;
+                        $Engineer->column_fields['engineer_name'] = $engname;
+                        $Engineer->column_fields['mobile_no'] = $engmob;
+                        $Engineer->save('Engineer');
+                        $EngineerModuleId = $Engineer->id;
+                    } else {
+                        $EngineerModuleId = $engval;
+                    }
+
+                         // Check and create or update Dealer
+                    if (empty($deaval)) {
+                        // Create a new Dealer
+                        $Vendors = CRMEntity::getInstance('Vendors');
+                        $Vendors->column_fields['assigned_user_id'] = 1;
+                        $Vendors->column_fields['vendorname'] = $deaname;
+                        $Vendors->column_fields['glacct'] = $dcategory;
+                        $Vendors->column_fields['phone'] = $deamob;
+                        $Vendors->save('Vendors');
+                        $DealerModuleId = $Vendors->id;
+                        } else {
+                        $DealerModuleId = $deaval;
+                        }
 
                     // Check and create or update Account
                     if (empty($accval)) {
                         // Create a new Account
                         $Accounts = CRMEntity::getInstance('Accounts');
                         $Accounts->column_fields['assigned_user_id'] = 1;
-                        $Accounts->column_fields['accountname'] = $accountname;
-                        $Accounts->column_fields['phone'] = $phone;
-                        $Accounts->column_fields['email1'] = $email;
+                        $Accounts->column_fields['accountname'] = $orgname;
                         $Accounts->save('Accounts');
                         $AccountsModuleId = $Accounts->id;
                     } else {
                         // Update existing Account
-                        $recordModel = Accounts_Record_Model::getInstanceById($accval);
-                        $recordModel->set('mode', 'edit');
-                        $recordModel->set("accountname", $accountname);
-                        $recordModel->set("phone", $phone);
-                        $recordModel->set("email1", $email);
-                        $recordModel->save();
+                        // $recordModel = Accounts_Record_Model::getInstanceById($accval);
+                        // $recordModel->set('mode', 'edit');
+                        // $recordModel->set("accountname", $orgname);
+                        // $recordModel->save();
                         $AccountsModuleId = $accval;
                     }
 
@@ -82,31 +152,61 @@ if (isset($_POST['upload']) && isset($_FILES['csv_file'])) {
                         // Create a new Contact
                         $Contacts = CRMEntity::getInstance('Contacts');
                         $Contacts->column_fields['assigned_user_id'] = 1;
-                        $Contacts->column_fields['firstname'] = $firstname;
-                        $Contacts->column_fields['lastname'] = $lastname;
-                        $Contacts->column_fields['email'] = $email;
+                        $Contacts->column_fields['lastname'] = $custname;
+                        $Contacts->column_fields['mailingstreet'] = $address;
+                        $Contacts->column_fields['mailingcity'] = $city;
+                        $Contacts->column_fields['mailingstate'] = $state;
+                        $Contacts->column_fields['mailingzip'] = $pin;
                         $Contacts->column_fields['account_id'] = $AccountsModuleId;
                         $Contacts->save('Contacts');
                         $ContactsModuleId = $Contacts->id;
                     } else {
                         // Update existing Contact
-                        $recordModel = Contacts_Record_Model::getInstanceById($val);
-                        $recordModel->set('mode', 'edit');
-                        $recordModel->set("firstname", $firstname);
-                        $recordModel->set("lastname", $lastname);
-                        $recordModel->set("email", $email);
-                        $recordModel->save();
+                        // $recordModel = Contacts_Record_Model::getInstanceById($val);
+                        // $recordModel->set('mode', 'edit');
+                        // $recordModel->set("lastname", $lastname);
+                        // $recordModel->set("mailingstreet", $address);
+                        // $recordModel->set("mailingcity", $city);
+                        // $recordModel->set("mailingstate", $state);
+                        // $recordModel->set("mailingzip", $pin);
+                        //$recordModel->save();
                         $ContactsModuleId = $val;
                     }
 
                     // Create or update HelpDesk record
                     $HelpDesk = CRMEntity::getInstance('HelpDesk');
                     $HelpDesk->column_fields['assigned_user_id'] = $current_user->id;
-                    $HelpDesk->column_fields['ticket_title'] = $ticket_title;
-                    $HelpDesk->column_fields['ticketpriorities'] = 'High';
-                    $HelpDesk->column_fields['ticketstatus'] = 'Open';
-                    $HelpDesk->column_fields['contact_id'] = $ContactsModuleId;
+                    $HelpDesk->column_fields['boid'] = $boid;
+                    $HelpDesk->column_fields['sapcode'] = $sapcode;
+                    $HelpDesk->column_fields['custcode'] = $custcode;
+                    $HelpDesk->column_fields['depocode'] = $depocode;
+                    $HelpDesk->column_fields['depotname'] = $depotname;
+                    $HelpDesk->column_fields['zone'] = $zone;
+                    $HelpDesk->column_fields['serviceengineer'] = $servicecord;
                     $HelpDesk->column_fields['parent_id'] = $AccountsModuleId;
+                    $HelpDesk->column_fields['contact_id'] = $ContactsModuleId;
+                    $HelpDesk->column_fields['ticketstatus'] = $status;
+                    $HelpDesk->column_fields['typeofmc'] = $typeofmc;
+                    $HelpDesk->column_fields['model'] = $model;
+                    $HelpDesk->column_fields['serialno'] = $mserialno;
+                    $HelpDesk->column_fields['doi'] = $doi;
+                    $HelpDesk->column_fields['vendor_id'] = $DealerModuleId;
+                    $HelpDesk->column_fields['engineer_name'] = $EngineerModuleId;
+                    $HelpDesk->column_fields['service_location'] = $serlocation;
+                    $HelpDesk->column_fields['tat'] = $tat;
+                    $HelpDesk->column_fields['gdata'] = $gdata;
+                    $HelpDesk->column_fields['connectivity'] = $conn;
+                    $HelpDesk->column_fields['device_details'] = $devdetails;
+                    $HelpDesk->column_fields['gyro_type'] = $gyrodetails;
+                    $HelpDesk->column_fields['gyro_model'] = $gyromodel;
+                    $HelpDesk->column_fields['gyro_serialno'] = $gyroserialno;
+                    $HelpDesk->column_fields['ups_details'] = $upsdetails;
+                    $HelpDesk->column_fields['ups_serialno'] = $upsserialno;
+                    $HelpDesk->column_fields['warranty_month'] = $warmonth;
+                    $HelpDesk->column_fields['warranty_start_date'] = $wsddate;
+                    $HelpDesk->column_fields['warranty_end_date'] = $weddate;
+                    $HelpDesk->column_fields['status'] = $status;
+                    $HelpDesk->column_fields['description'] = $remarks;
                     $HelpDesk->save('HelpDesk');
                     $HelpDeskModuleId = $HelpDesk->id;
 
@@ -126,8 +226,7 @@ if (isset($_POST['upload']) && isset($_FILES['csv_file'])) {
             echo "File imported successfully! Total records imported: " . $totalRecordsImported;
         } else {
             echo "Failed to open the file.";
-        }
-        
+        }    
     } else {
         echo "File upload failed.";
     }
@@ -148,14 +247,28 @@ function createRelationBetweenHelpDeskAndContact($ContactsModuleId, $HelpDeskMod
     $relation->addRelation('Contacts', $ContactsModuleId, 'HelpDesk', $HelpDeskModuleId);
 }
 
-function isRecordExits($email, $firstname, $lastname)
+function createRelationBetweenHelpDeskAndVendor($DealerModuleId, $HelpDeskModuleId)
 {
     global $adb;
-    $sql = 'SELECT contactid FROM vtiger_contactdetails
-            INNER JOIN vtiger_crmentity
-            ON vtiger_crmentity.crmid = vtiger_contactdetails.contactid
-            WHERE email = ? AND firstname= ? AND lastname= ? AND vtiger_crmentity.deleted = 0';
-    $sqlResult = $adb->pquery($sql, array($email, $firstname, $lastname));
+    $relation = new Relation();
+    $relation->addRelation('Vendors', $DealerModuleId, 'HelpDesk', $HelpDeskModuleId);
+}
+
+function createRelationBetweenHelpDeskAndEngineer($EngineerModuleId, $HelpDeskModuleId)
+{
+    global $adb;
+    $relation = new Relation();
+    $relation->addRelation('Engineer', $EngineerModuleId, 'HelpDesk', $HelpDeskModuleId);
+}
+
+function isRecordExits($lastname,$address,$state,$city,$pin)
+{
+    global $adb;
+    $sql = 'SELECT vtiger_contactdetails.contactid FROM vtiger_contactdetails
+    INNER JOIN vtiger_crmentity ON vtiger_crmentity.crmid = vtiger_contactdetails.contactid
+    INNER JOIN vtiger_contactaddress ON vtiger_contactaddress.contactaddressid = vtiger_contactdetails.contactid
+    WHERE vtiger_contactdetails.lastname = ? AND vtiger_contactaddress.mailingstreet = ? AND vtiger_contactaddress.mailingcity = ? AND vtiger_contactaddress.mailingstate = ? AND vtiger_contactaddress.mailingzip = ? AND vtiger_crmentity.deleted = 0';
+    $sqlResult = $adb->pquery($sql, array($lastname,$address,$state,$city,$pin));
     $num_rows = $adb->num_rows($sqlResult);
     if ($num_rows > 0) {
         $dataRow = $adb->fetchByAssoc($sqlResult, 0);
@@ -165,14 +278,48 @@ function isRecordExits($email, $firstname, $lastname)
     }
 }
 
-function isaccRecordExits($email, $accountname)
+function isengRecordExits($engname,$engcode)
+{
+    global $adb;
+    $sql = 'SELECT engineerid FROM vtiger_engineer
+            INNER JOIN vtiger_crmentity
+            ON vtiger_crmentity.crmid = vtiger_engineer.engineerid
+            WHERE engineer_name = ? AND engineer_code = ? AND vtiger_crmentity.deleted = 0';
+    $sqlResult = $adb->pquery($sql, array($engname, $engcode));
+    $num_rows = $adb->num_rows($sqlResult);
+    if ($num_rows > 0) {
+        $dataRow = $adb->fetchByAssoc($sqlResult, 0);
+        return $dataRow['engineerid'];
+    } else {
+        return '';
+    }
+}
+
+function isdelRecordExits($deaname,$deamob)
+{
+    global $adb;
+    $sql = 'SELECT vendorid FROM  vtiger_vendor
+            INNER JOIN vtiger_crmentity
+            ON vtiger_crmentity.crmid =  vtiger_vendor.vendorid
+            WHERE vendorname = ? AND phone = ? AND vtiger_crmentity.deleted = 0';
+    $sqlResult = $adb->pquery($sql, array($deaname, $deamob));
+    $num_rows = $adb->num_rows($sqlResult);
+    if ($num_rows > 0) {
+        $dataRow = $adb->fetchByAssoc($sqlResult, 0);
+        return $dataRow['vendorid'];
+    } else {
+        return '';
+    }
+}
+
+function isaccRecordExits($orgname)
 {
     global $adb;
     $sql = 'SELECT accountid FROM vtiger_account
             INNER JOIN vtiger_crmentity
             ON vtiger_crmentity.crmid = vtiger_account.accountid
-            WHERE email1 = ? AND accountname= ? AND vtiger_crmentity.deleted = 0';
-    $sqlResult = $adb->pquery($sql, array($email, $accountname));
+            WHERE accountname= ? AND vtiger_crmentity.deleted = 0';
+    $sqlResult = $adb->pquery($sql, array($orgname));
     $num_rows = $adb->num_rows($sqlResult);
     if ($num_rows > 0) {
         $dataRow = $adb->fetchByAssoc($sqlResult, 0);

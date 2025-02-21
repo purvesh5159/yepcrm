@@ -58,7 +58,7 @@ if ($moduleInstance || file_exists('modules/'.$MODULENAME)) {
     $field3 = new Vtiger_Field();
     $field3->name = 'mobile_no';
     $field3->label = 'Mobile No';
-    $field3->uitype = 5;  // Phone Field
+    $field3->uitype = 11;  // Phone Field
     $field3->column = $field3->name;
     $field3->columntype = 'VARCHAR(20)';
     $field3->typeofdata = 'V~M';

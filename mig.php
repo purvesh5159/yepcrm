@@ -418,6 +418,34 @@ if ($blockInstance) {
 } else {
     echo "Block Does not exits -- LBL_TICKET_INFORMATION in HelpDesk -- <br>";
 }
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$blockInstance = Vtiger_Block::getInstance('LBL_TICKET_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('gdata', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'gdata';
+        $fieldInstance->label = 'G-DATA Version';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'gdata';
+        $fieldInstance->uitype = '2';
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(200)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+//        $fieldInstance->setPicklistValues(array('PUTTUR'));
+    } else {
+        echo "field is present -- sapcode In HelpDesk Module --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_TICKET_INFORMATION in HelpDesk -- <br>";
+}
+
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
