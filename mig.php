@@ -1242,4 +1242,30 @@ if ($blockInstance) {
 } else {
     echo "Block Does not exits -- LBL_TICKET_INFORMATION in HelpDesk -- <br>";
 }
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$blockInstance = Vtiger_Block::getInstance('Call Closing Details', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('eng_mobileno', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'eng_mobileno';
+        $fieldInstance->label = 'Engineer Contact No';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'eng_mobileno';
+        $fieldInstance->uitype = '11';
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(64)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+    } else {
+        echo "field is already Present --- user_password in ServiceEngineer Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_USERLOGIN_ROLE -- <br>";
+}
 ?>

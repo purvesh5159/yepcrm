@@ -59,7 +59,7 @@ if (isset($_POST['upload']) && isset($_FILES['csv_file'])) {
                     $custname = $data[8];
                     $address = $data[9];
                     $city = $data[10];
-                    $pin = $data[11];
+                    $pincode = $data[11];
                     $state = $data[12];
 
                     $typeofmc = $data[13];
@@ -98,7 +98,7 @@ if (isset($_POST['upload']) && isset($_FILES['csv_file'])) {
 
                     // Check if account and contact exist
                     $accval = isaccRecordExits($orgname);
-                    $val = isRecordExits($lastname,$address,$state,$city,$pin);
+                    $val = isRecordExits($custname,$address,$city,$state,$pincode);
                     $engval = isengRecordExits($engname,$engcode);
                     $deaval = isdelRecordExits($deaname,$deamob);
 
@@ -156,7 +156,7 @@ if (isset($_POST['upload']) && isset($_FILES['csv_file'])) {
                         $Contacts->column_fields['mailingstreet'] = $address;
                         $Contacts->column_fields['mailingcity'] = $city;
                         $Contacts->column_fields['mailingstate'] = $state;
-                        $Contacts->column_fields['mailingzip'] = $pin;
+                        $Contacts->column_fields['mailingzip'] = $pincode;
                         $Contacts->column_fields['account_id'] = $AccountsModuleId;
                         $Contacts->save('Contacts');
                         $ContactsModuleId = $Contacts->id;
@@ -173,6 +173,8 @@ if (isset($_POST['upload']) && isset($_FILES['csv_file'])) {
                         $ContactsModuleId = $val;
                     }
 
+                   
+
                     // Create or update HelpDesk record
                     $HelpDesk = CRMEntity::getInstance('HelpDesk');
                     $HelpDesk->column_fields['assigned_user_id'] = $current_user->id;
@@ -182,10 +184,13 @@ if (isset($_POST['upload']) && isset($_FILES['csv_file'])) {
                     $HelpDesk->column_fields['depocode'] = $depocode;
                     $HelpDesk->column_fields['depotname'] = $depotname;
                     $HelpDesk->column_fields['zone'] = $zone;
+                  
                     $HelpDesk->column_fields['serviceengineer'] = $servicecord;
                     $HelpDesk->column_fields['parent_id'] = $AccountsModuleId;
                     $HelpDesk->column_fields['contact_id'] = $ContactsModuleId;
-                    $HelpDesk->column_fields['ticketstatus'] = $status;
+                    $HelpDesk->column_fields['contact_mobileno'] = $deamob;
+                    $HelpDesk->column_fields['eng_mobileno'] = $engmob;
+                    $HelpDesk->column_fields['status'] = $status;
                     $HelpDesk->column_fields['typeofmc'] = $typeofmc;
                     $HelpDesk->column_fields['model'] = $model;
                     $HelpDesk->column_fields['serialno'] = $mserialno;
@@ -196,6 +201,11 @@ if (isset($_POST['upload']) && isset($_FILES['csv_file'])) {
                     $HelpDesk->column_fields['tat'] = $tat;
                     $HelpDesk->column_fields['gdata'] = $gdata;
                     $HelpDesk->column_fields['connectivity'] = $conn;
+
+                    $HelpDesk->column_fields['address'] = $address;     
+                    $HelpDesk->column_fields['city'] = $city;
+                    $HelpDesk->column_fields['state'] = $state;
+                    $HelpDesk->column_fields['pincode'] = $pincode;
                     $HelpDesk->column_fields['device_details'] = $devdetails;
                     $HelpDesk->column_fields['gyro_type'] = $gyrodetails;
                     $HelpDesk->column_fields['gyro_model'] = $gyromodel;
@@ -207,6 +217,7 @@ if (isset($_POST['upload']) && isset($_FILES['csv_file'])) {
                     $HelpDesk->column_fields['warranty_end_date'] = $weddate;
                     $HelpDesk->column_fields['status'] = $status;
                     $HelpDesk->column_fields['description'] = $remarks;
+                   
                     $HelpDesk->save('HelpDesk');
                     $HelpDeskModuleId = $HelpDesk->id;
 
@@ -261,14 +272,19 @@ function createRelationBetweenHelpDeskAndEngineer($EngineerModuleId, $HelpDeskMo
     $relation->addRelation('Engineer', $EngineerModuleId, 'HelpDesk', $HelpDeskModuleId);
 }
 
-function isRecordExits($lastname,$address,$state,$city,$pin)
+function isRecordExits($custname,$address,$city,$state,$pincode)
 {
+    
     global $adb;
     $sql = 'SELECT vtiger_contactdetails.contactid FROM vtiger_contactdetails
     INNER JOIN vtiger_crmentity ON vtiger_crmentity.crmid = vtiger_contactdetails.contactid
     INNER JOIN vtiger_contactaddress ON vtiger_contactaddress.contactaddressid = vtiger_contactdetails.contactid
-    WHERE vtiger_contactdetails.lastname = ? AND vtiger_contactaddress.mailingstreet = ? AND vtiger_contactaddress.mailingcity = ? AND vtiger_contactaddress.mailingstate = ? AND vtiger_contactaddress.mailingzip = ? AND vtiger_crmentity.deleted = 0';
-    $sqlResult = $adb->pquery($sql, array($lastname,$address,$state,$city,$pin));
+    WHERE vtiger_contactdetails.lastname = ? 
+    AND vtiger_contactaddress.mailingstreet = ? 
+    AND vtiger_contactaddress.mailingcity = ? 
+    AND vtiger_contactaddress.mailingstate = ? 
+    AND vtiger_contactaddress.mailingzip = ? AND vtiger_crmentity.deleted = 0';
+    $sqlResult = $adb->pquery($sql, array($custname,$address,$city,$state,$pincode));
     $num_rows = $adb->num_rows($sqlResult);
     if ($num_rows > 0) {
         $dataRow = $adb->fetchByAssoc($sqlResult, 0);
