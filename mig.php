@@ -11,6 +11,7 @@ require_once 'vtlib/Vtiger/Module.php';
  ini_set('display_startup_errors', 1);
  error_reporting(E_ALL);
 
+
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
@@ -715,11 +716,19 @@ if ($blockInstance) {
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
-$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$moduleInstance = Vtiger_Module::getInstance('Tickets');
 $blockInstance = Vtiger_Block::getInstance('Call Logging Details', $moduleInstance);
 if ($blockInstance) {
     $fieldInstance = Vtiger_Field::getInstance('subcalltype', $moduleInstance);
     if (!$fieldInstance) {
+
+        $moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+        $accountsModule = Vtiger_Module::getInstance('Tickets');
+        $relationLabel  = 'Tickets';
+        $moduleInstance->setRelatedList(
+            $accountsModule, $relationLabel, Array('ADD','SELECT'),'get_dependents_list'
+        );
+
         $fieldInstance = new Vtiger_Field();
         $fieldInstance->name = 'subcalltype';
         $fieldInstance->label = 'Sub Call Type';
@@ -727,6 +736,7 @@ if ($blockInstance) {
         $fieldInstance->column = 'subcalltype';
         $fieldInstance->uitype = '16';
         $fieldInstance->presence = '0';
+        $fieldInstance->quickcreate = 3;
         $fieldInstance->typeofdata = 'V~O';
         $fieldInstance->columntype = 'VARCHAR(100)';
         $fieldInstance->defaultvalue = NULL;
@@ -742,7 +752,7 @@ if ($blockInstance) {
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
-$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$moduleInstance = Vtiger_Module::getInstance('Tickets');
 $blockInstance = Vtiger_Block::getInstance('Call Logging Details', $moduleInstance);
 if ($blockInstance) {
     $fieldInstance = Vtiger_Field::getInstance('problemdesc', $moduleInstance);
@@ -753,6 +763,7 @@ if ($blockInstance) {
         $fieldInstance->table = $moduleInstance->basetable;
         $fieldInstance->column = 'problemdesc';
         $fieldInstance->uitype = '19';
+        $fieldInstance->quickcreate = 3;
         $fieldInstance->presence = '0';
         $fieldInstance->typeofdata = 'V~O';
         $fieldInstance->columntype = 'VARCHAR(64)';
@@ -768,7 +779,7 @@ if ($blockInstance) {
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
-$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$moduleInstance = Vtiger_Module::getInstance('Tickets');
 $blockInstance = Vtiger_Block::getInstance('Call Logging Details', $moduleInstance);
 if ($blockInstance) {
     $fieldInstance = Vtiger_Field::getInstance('contact_mobileno', $moduleInstance);
@@ -779,6 +790,7 @@ if ($blockInstance) {
         $fieldInstance->table = $moduleInstance->basetable;
         $fieldInstance->column = 'contact_mobileno';
         $fieldInstance->uitype = '11';
+        $fieldInstance->quickcreate = 3;
         $fieldInstance->presence = '0';
         $fieldInstance->typeofdata = 'V~O';
         $fieldInstance->columntype = 'VARCHAR(64)';
@@ -794,7 +806,7 @@ if ($blockInstance) {
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
-$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$moduleInstance = Vtiger_Module::getInstance('Tickets');
 $blockInstance = Vtiger_Block::getInstance('Call Logging Details', $moduleInstance);
 if ($blockInstance) {
     $fieldInstance = Vtiger_Field::getInstance('usercomment', $moduleInstance);
@@ -805,6 +817,7 @@ if ($blockInstance) {
         $fieldInstance->table = $moduleInstance->basetable;
         $fieldInstance->column = 'usercomment';
         $fieldInstance->uitype = '19';
+        $fieldInstance->quickcreate = 3;
         $fieldInstance->presence = '0';
         $fieldInstance->typeofdata = 'V~O';
         $fieldInstance->columntype = 'VARCHAR(64)';
@@ -820,7 +833,7 @@ if ($blockInstance) {
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
-$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$moduleInstance = Vtiger_Module::getInstance('Tickets');
 $blockInstance = Vtiger_Block::getInstance('Call Closing Details', $moduleInstance);
 if ($blockInstance) {
     $fieldInstance = Vtiger_Field::getInstance('engreachdate', $moduleInstance);
@@ -831,6 +844,7 @@ if ($blockInstance) {
         $fieldInstance->table = $moduleInstance->basetable;
         $fieldInstance->column = 'engreachdate';
         $fieldInstance->uitype = 5;
+        $fieldInstance->quickcreate = 3;
         $fieldInstance->presence = '0';
         $fieldInstance->typeofdata = 'D~O';
         $fieldInstance->columntype = 'DATE';
@@ -846,7 +860,7 @@ if ($blockInstance) {
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
-$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$moduleInstance = Vtiger_Module::getInstance('Tickets');
 $blockInstance = Vtiger_Block::getInstance('Call Closing Details', $moduleInstance);
 if ($blockInstance) {
     $fieldInstance = Vtiger_Field::getInstance('engreachtime', $moduleInstance);
@@ -857,6 +871,7 @@ if ($blockInstance) {
         $fieldInstance->table = $moduleInstance->basetable;
         $fieldInstance->column = 'engreachtime';
         $fieldInstance->uitype = 14;
+        $fieldInstance->quickcreate = 3;
         $fieldInstance->presence = '0';
         $fieldInstance->typeofdata = 'T~O';
         $fieldInstance->columntype = 'TIME';
@@ -872,7 +887,7 @@ if ($blockInstance) {
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
-$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$moduleInstance = Vtiger_Module::getInstance('Tickets');
 $blockInstance = Vtiger_Block::getInstance('Call Closing Details', $moduleInstance);
 if ($blockInstance) {
     $fieldInstance = Vtiger_Field::getInstance('tickedcloseddate', $moduleInstance);
@@ -883,6 +898,7 @@ if ($blockInstance) {
         $fieldInstance->table = $moduleInstance->basetable;
         $fieldInstance->column = 'tickedcloseddate';
         $fieldInstance->uitype = 5;
+        $fieldInstance->quickcreate = 3;
         $fieldInstance->presence = '0';
         $fieldInstance->typeofdata = 'D~O';
         $fieldInstance->columntype = 'DATE';
@@ -898,7 +914,7 @@ if ($blockInstance) {
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
-$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$moduleInstance = Vtiger_Module::getInstance('Tickets');
 $blockInstance = Vtiger_Block::getInstance('Call Closing Details', $moduleInstance);
 if ($blockInstance) {
     $fieldInstance = Vtiger_Field::getInstance('ticketclosedtime', $moduleInstance);
@@ -909,6 +925,7 @@ if ($blockInstance) {
         $fieldInstance->table = $moduleInstance->basetable;
         $fieldInstance->column = 'ticketclosedtime';
         $fieldInstance->uitype = 14;
+        $fieldInstance->quickcreate = 3;
         $fieldInstance->presence = '0';
         $fieldInstance->typeofdata = 'T~O';
         $fieldInstance->columntype = 'TIME';
@@ -924,7 +941,7 @@ if ($blockInstance) {
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
-$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$moduleInstance = Vtiger_Module::getInstance('Tickets');
 $blockInstance = Vtiger_Block::getInstance('Call Closing Details', $moduleInstance);
 if ($blockInstance) {
     $fieldInstance = Vtiger_Field::getInstance('closingcomment', $moduleInstance);
@@ -935,6 +952,7 @@ if ($blockInstance) {
         $fieldInstance->table = $moduleInstance->basetable;
         $fieldInstance->column = 'closingcomment';
         $fieldInstance->uitype = '19';
+        $fieldInstance->quickcreate = 3;
         $fieldInstance->presence = '0';
         $fieldInstance->typeofdata = 'V~O';
         $fieldInstance->columntype = 'VARCHAR(64)';
@@ -950,7 +968,7 @@ if ($blockInstance) {
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
-$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$moduleInstance = Vtiger_Module::getInstance('Tickets');
 $blockInstance = Vtiger_Block::getInstance('Call Closing Details', $moduleInstance);
 if ($blockInstance) {
     $fieldInstance = Vtiger_Field::getInstance('fcr', $moduleInstance);
@@ -961,6 +979,7 @@ if ($blockInstance) {
         $fieldInstance->table = $moduleInstance->basetable;
         $fieldInstance->column = 'fcr';
         $fieldInstance->uitype = '16';
+        $fieldInstance->quickcreate = 3;
         $fieldInstance->presence = '0';
         $fieldInstance->typeofdata = 'V~O';
         $fieldInstance->columntype = 'VARCHAR(100)';
@@ -977,7 +996,7 @@ if ($blockInstance) {
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
-$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$moduleInstance = Vtiger_Module::getInstance('Tickets');
 $blockInstance = Vtiger_Block::getInstance('Call Closing Details', $moduleInstance);
 if ($blockInstance) {
     $fieldInstance = Vtiger_Field::getInstance('spareused', $moduleInstance);
@@ -988,6 +1007,7 @@ if ($blockInstance) {
         $fieldInstance->table = $moduleInstance->basetable;
         $fieldInstance->column = 'spareused';
         $fieldInstance->uitype = '16';
+        $fieldInstance->quickcreate = 3;
         $fieldInstance->presence = '0';
         $fieldInstance->typeofdata = 'V~O';
         $fieldInstance->columntype = 'VARCHAR(100)';
@@ -1003,7 +1023,7 @@ if ($blockInstance) {
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
-$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$moduleInstance = Vtiger_Module::getInstance('Tickets');
 $blockInstance = Vtiger_Block::getInstance('Call Closing Details', $moduleInstance);
 if ($blockInstance) {
     $fieldInstance = Vtiger_Field::getInstance('sparechargable', $moduleInstance);
@@ -1014,6 +1034,7 @@ if ($blockInstance) {
         $fieldInstance->table = $moduleInstance->basetable;
         $fieldInstance->column = 'sparechargable';
         $fieldInstance->uitype = '16';
+        $fieldInstance->quickcreate = 3;
         $fieldInstance->presence = '0';
         $fieldInstance->typeofdata = 'V~O';
         $fieldInstance->columntype = 'VARCHAR(100)';
@@ -1030,7 +1051,7 @@ if ($blockInstance) {
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
-$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$moduleInstance = Vtiger_Module::getInstance('Tickets');
 $blockInstance = Vtiger_Block::getInstance('Call Closing Details', $moduleInstance);
 if ($blockInstance) {
     $fieldInstance = Vtiger_Field::getInstance('spare1', $moduleInstance);
@@ -1041,6 +1062,7 @@ if ($blockInstance) {
         $fieldInstance->table = $moduleInstance->basetable;
         $fieldInstance->column = 'spare1';
         $fieldInstance->uitype = '2';
+        $fieldInstance->quickcreate = 3;
         $fieldInstance->presence = '0';
         $fieldInstance->typeofdata = 'V~O';
         $fieldInstance->columntype = 'VARCHAR(200)';
@@ -1057,7 +1079,7 @@ if ($blockInstance) {
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
-$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$moduleInstance = Vtiger_Module::getInstance('Tickets');
 $blockInstance = Vtiger_Block::getInstance('Call Closing Details', $moduleInstance);
 if ($blockInstance) {
     $fieldInstance = Vtiger_Field::getInstance('spareqty1', $moduleInstance);
@@ -1068,6 +1090,7 @@ if ($blockInstance) {
         $fieldInstance->table = $moduleInstance->basetable;
         $fieldInstance->column = 'spareqty1';
         $fieldInstance->uitype = '2';
+        $fieldInstance->quickcreate = 3;
         $fieldInstance->presence = '0';
         $fieldInstance->typeofdata = 'V~O';
         $fieldInstance->columntype = 'VARCHAR(200)';
@@ -1084,7 +1107,7 @@ if ($blockInstance) {
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
-$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$moduleInstance = Vtiger_Module::getInstance('Tickets');
 $blockInstance = Vtiger_Block::getInstance('Call Closing Details', $moduleInstance);
 if ($blockInstance) {
     $fieldInstance = Vtiger_Field::getInstance('spare2', $moduleInstance);
@@ -1095,6 +1118,7 @@ if ($blockInstance) {
         $fieldInstance->table = $moduleInstance->basetable;
         $fieldInstance->column = 'spare2';
         $fieldInstance->uitype = '2';
+        $fieldInstance->quickcreate = 3;
         $fieldInstance->presence = '0';
         $fieldInstance->typeofdata = 'V~O';
         $fieldInstance->columntype = 'VARCHAR(200)';
@@ -1111,7 +1135,7 @@ if ($blockInstance) {
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
-$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$moduleInstance = Vtiger_Module::getInstance('Tickets');
 $blockInstance = Vtiger_Block::getInstance('Call Closing Details', $moduleInstance);
 if ($blockInstance) {
     $fieldInstance = Vtiger_Field::getInstance('spareqty2', $moduleInstance);
@@ -1122,6 +1146,7 @@ if ($blockInstance) {
         $fieldInstance->table = $moduleInstance->basetable;
         $fieldInstance->column = 'spareqty2';
         $fieldInstance->uitype = '2';
+        $fieldInstance->quickcreate = 3;
         $fieldInstance->presence = '0';
         $fieldInstance->typeofdata = 'V~O';
         $fieldInstance->columntype = 'VARCHAR(200)';
@@ -1246,7 +1271,7 @@ if ($blockInstance) {
 $moduleInstance = null;
 $blockInstance = null;
 $fieldInstance = null;
-$moduleInstance = Vtiger_Module::getInstance('HelpDesk');
+$moduleInstance = Vtiger_Module::getInstance('Tickets');
 $blockInstance = Vtiger_Block::getInstance('Call Closing Details', $moduleInstance);
 if ($blockInstance) {
     $fieldInstance = Vtiger_Field::getInstance('eng_mobileno', $moduleInstance);
@@ -1257,6 +1282,7 @@ if ($blockInstance) {
         $fieldInstance->table = $moduleInstance->basetable;
         $fieldInstance->column = 'eng_mobileno';
         $fieldInstance->uitype = '11';
+        $fieldInstance->quickcreate = 3;
         $fieldInstance->presence = '0';
         $fieldInstance->typeofdata = 'V~O';
         $fieldInstance->columntype = 'VARCHAR(64)';
@@ -1268,4 +1294,351 @@ if ($blockInstance) {
 } else {
     echo " block does not exits --- LBL_USERLOGIN_ROLE -- <br>";
 }
+
+$invoiceModule = null;
+$blockInstance = null;
+$fieldInstance = null;
+$invoiceModule = Vtiger_Module::getInstance('Tickets');
+$blockInstance = Vtiger_Block::getInstance('Call Logging Details', $invoiceModule);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('contact_id', $invoiceModule);
+    if (!$fieldInstance) {
+        $field = new Vtiger_Field();
+        $field->name = 'contact_id';
+        $field->column = 'contact_id';
+        $field->uitype = 10;
+        $field->table = $invoiceModule->basetable;
+        $field->label = 'Customer Name';
+        $field->summaryfield = 1;
+        $field->readonly = 1;
+        $field->presence = 2;
+        $field->typeofdata = 'I~O';
+        $field->columntype = 'INT(10)';
+        $field->quickcreate = 2;
+        $field->displaytype = 1;
+        $field->masseditable = 1;
+        $field->defaultvalue = 0;
+        $blockInstance->addField($field);
+    } else {
+        echo "field is present -- vendor_id HelpDesk --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_USERLOGIN_ROLE in HelpDesk -- <br>";
+}
+
+$invoiceModule = null;
+$blockInstance = null;
+$fieldInstance = null;
+$invoiceModule = Vtiger_Module::getInstance('Tickets');
+$blockInstance = Vtiger_Block::getInstance('Call Logging Details', $invoiceModule);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('engineer_id', $invoiceModule);
+    if (!$fieldInstance) {
+        $field = new Vtiger_Field();
+        $field->name = 'engineer_id';
+        $field->column = 'engineer_id';
+        $field->uitype = 10;
+        $field->table = $invoiceModule->basetable;
+        $field->label = 'Engineer Name';
+        $field->summaryfield = 1;
+        $field->readonly = 1;
+        $field->presence = 2;
+        $field->typeofdata = 'I~O';
+        $field->columntype = 'INT(10)';
+        $field->quickcreate = 2;
+        $field->displaytype = 1;
+        $field->masseditable = 1;
+        $field->defaultvalue = 0;
+        $blockInstance->addField($field);
+    } else {
+        echo "field is present -- vendor_id HelpDesk --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_USERLOGIN_ROLE in HelpDesk -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('Engineer');
+$blockInstance = Vtiger_Block::getInstance('LBL_ENGINEER_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('eng_status', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'eng_status';
+        $fieldInstance->label = 'Status';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'eng_status';
+        $fieldInstance->uitype = '16';
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(100)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+        $fieldInstance->setPicklistValues(array('Approved', 'Rejected', 'Pending'));
+    } else {
+        echo "field is already Present --- ticket_type in HelpDesk Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_CUSTOM_INFORMATION -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('ServiceCordinator');
+$blockInstance = Vtiger_Block::getInstance('LBL_SERVICECORDINATOR_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('sm_status', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'sm_status';
+        $fieldInstance->label = 'Status';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'sm_status';
+        $fieldInstance->uitype = '16';
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(100)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+        $fieldInstance->setPicklistValues(array('Approved', 'Rejected', 'Pending'));
+    } else {
+        echo "field is already Present --- ticket_type in HelpDesk Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_CUSTOM_INFORMATION -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('Engineer');
+$blockInstance = Vtiger_Block::getInstance('LBL_ENGINEER_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('rejection_reason', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'rejection_reason';
+        $fieldInstance->label = 'Rejection Reason';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'rejection_reason';
+        $fieldInstance->uitype = '19';
+        $fieldInstance->quickcreate = 2;
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(64)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+    } else {
+        echo "field is already Present --- user_password in ServiceEngineer Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_USERLOGIN_ROLE -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('Engineer');
+$blockInstance = Vtiger_Block::getInstance('LBL_ENGINEER_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('user_password', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'user_password';
+        $fieldInstance->label = 'Set Password';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'user_password';
+        $fieldInstance->uitype = '99';
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'P~M';
+        $fieldInstance->columntype = 'VARCHAR(100)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+    } else {
+        echo "field is already Present --- user_password in Contacts Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_CUSTOM_INFORMATION -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('Engineer');
+$blockInstance = Vtiger_Block::getInstance('LBL_ENGINEER_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('confirm_password', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'confirm_password';
+        $fieldInstance->label = 'Re-Type Password';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'confirm_password';
+        $fieldInstance->uitype = '99';
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'P~M';
+        $fieldInstance->columntype = 'VARCHAR(100)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+    } else {
+        echo "field is already Present --- confirm_password in Contacts Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_CUSTOM_INFORMATION -- <br>";
+}
+
+$emm = new VTEntityMethodManager($adb);
+$result = $adb->pquery("SELECT function_name FROM com_vtiger_workflowtasks_entitymethod WHERE module_name=? AND method_name=?", array('Engineer', 'createUserOnApproval'));
+if ($adb->num_rows($result) == 0) {
+    $emm->addEntityMethod("Engineer", "createUserOnApproval", "modules/Engineer/createUserOnApproval.php", "createUserOnApproval");
+} else {
+    print_r("already exits --- workflow function -- createUserOnApproval <br> ");
+}
+$emm = null;
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('ServiceCordinator');
+$blockInstance = Vtiger_Block::getInstance('LBL_SERVICECORDINATOR_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('rejection_reason', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'rejection_reason';
+        $fieldInstance->label = 'Rejection Reason';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'rejection_reason';
+        $fieldInstance->uitype = '19';
+        $fieldInstance->quickcreate = 2;
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(64)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+    } else {
+        echo "field is already Present --- user_password in ServiceEngineer Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_USERLOGIN_ROLE -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('ServiceCordinator');
+$blockInstance = Vtiger_Block::getInstance('LBL_SERVICECORDINATOR_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('user_password', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'user_password';
+        $fieldInstance->label = 'Set Password';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'user_password';
+        $fieldInstance->uitype = '99';
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'P~M';
+        $fieldInstance->columntype = 'VARCHAR(100)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+    } else {
+        echo "field is already Present --- user_password in Contacts Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_CUSTOM_INFORMATION -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('ServiceCordinator');
+$blockInstance = Vtiger_Block::getInstance('LBL_SERVICECORDINATOR_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('confirm_password', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'confirm_password';
+        $fieldInstance->label = 'Re-Type Password';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'confirm_password';
+        $fieldInstance->uitype = '99';
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'P~M';
+        $fieldInstance->columntype = 'VARCHAR(100)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+    } else {
+        echo "field is already Present --- confirm_password in Contacts Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_CUSTOM_INFORMATION -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('ServiceCordinator');
+$blockInstance = Vtiger_Block::getInstance('LBL_SERVICECORDINATOR_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('sm_code', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'sm_code';
+        $fieldInstance->label = 'Service Cordinator Code';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'sm_code';
+        $fieldInstance->uitype = '2';
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(200)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+//        $fieldInstance->setPicklistValues(array('PUTTUR'));
+    } else {
+        echo "field is present -- sapcode In HelpDesk Module --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_TICKET_INFORMATION in HelpDesk -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('ServiceCordinator');
+$blockInstance = Vtiger_Block::getInstance('LBL_SERVICECORDINATOR_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('mobile_no', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'mobile_no';
+        $fieldInstance->label = 'Mobile No';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'mobile_no';
+        $fieldInstance->uitype = '11';
+        $fieldInstance->quickcreate = 3;
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(64)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+    } else {
+        echo "field is already Present --- user_password in ServiceEngineer Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_USERLOGIN_ROLE -- <br>";
+}
+
+$emm = new VTEntityMethodManager($adb);
+$result = $adb->pquery("SELECT function_name FROM com_vtiger_workflowtasks_entitymethod WHERE module_name=? AND method_name=?", array('ServiceCordinator', 'createUserOnApproval'));
+if ($adb->num_rows($result) == 0) {
+    $emm->addEntityMethod("ServiceCordinator", "createUserOnApproval", "modules/ServiceCordinator/createUserOnApproval.php", "createUserOnApproval");
+} else {
+    print_r("already exits --- workflow function -- createUserOnApproval <br> ");
+}
+$emm = null;
+
 ?>

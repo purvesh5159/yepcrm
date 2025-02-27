@@ -106,3 +106,21 @@ D:\wamp\www\yepcrm\includes\main\WebUI.php::preProcess::76<br>
 D:\wamp\www\yepcrm\includes\main\WebUI.php::triggerPreProcess::214<br>
 D:\wamp\www\yepcrm\index.php::process::29<br>
 
+Traced on 2025-02-27 05:41:26
+FileAccessForInclusion - 
+D:\wamp\www\yepcrm\include\utils\CommonUtils.php::checkFileAccessForInclusion::388<br>
+D:\wamp\www\yepcrm\data\CRMEntity.php::checkFileAccessForInclusion::59<br>
+D:\wamp\www\yepcrm\include\Webservices\Utils.php::getInstance::224<br>
+D:\wamp\www\yepcrm\include\Webservices\VtigerCRMObjectMeta.php::vtws_getModuleInstance::44<br>
+D:\wamp\www\yepcrm\include\Webservices\VtigerModuleOperation.php::__construct::32<br>
+D:\wamp\www\yepcrm\include\Webservices\VtigerModuleOperation.php::getMetaInstance::20<br>
+D:\wamp\www\yepcrm\include\Webservices\Utils.php::__construct::472<br>
+D:\wamp\www\yepcrm\include\QueryGenerator\QueryGenerator.php::vtws_getModuleHandlerFromName::98<br>
+D:\wamp\www\yepcrm\include\QueryGenerator\QueryGenerator.php::getMeta::74<br>
+D:\wamp\www\yepcrm\include\QueryGenerator\EnhancedQueryGenerator.php::__construct::16<br>
+D:\wamp\www\yepcrm\modules\Vtiger\models\ListView.php::__construct::373<br>
+D:\wamp\www\yepcrm\modules\Vtiger\views\List.php::getInstance::58<br>
+D:\wamp\www\yepcrm\includes\main\WebUI.php::preProcess::76<br>
+D:\wamp\www\yepcrm\includes\main\WebUI.php::triggerPreProcess::214<br>
+D:\wamp\www\yepcrm\index.php::process::29<br>
+
