@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-02-20 12:16:36
+/* Smarty version 4.5.4, created on 2025-03-04 05:35:23
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\partials\SidebarEssentials.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67b71d246fec83_50193069',
+  'unifunc' => 'content_67c6911b0140e1_66183508',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67b71d246fec83_50193069 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67c6911b0140e1_66183508 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'D:\\wamp\\www\\yepcrm\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.count.php','function'=>'smarty_modifier_count',),));
 ?>
 <div class="sidebar-menu">
@@ -103,8 +103,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 									<li style="font-size:12px;" class='listViewFilter <?php if ($_smarty_tpl->tpl_vars['VIEWID']->value == $_smarty_tpl->tpl_vars['CUSTOM_VIEW']->value->getId() && ((isset($_smarty_tpl->tpl_vars['CURRENT_TAG']->value)) && $_smarty_tpl->tpl_vars['CURRENT_TAG']->value == '')) {?> active<?php } elseif ((isset($_smarty_tpl->tpl_vars['__smarty_foreach_customView']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_foreach_customView']->value['iteration'] : null) > 10) {?> filterHidden hide<?php }?>'> 
                                         <?php ob_start();
 echo vtranslate($_smarty_tpl->tpl_vars['CUSTOM_VIEW']->value->get('viewname'),$_smarty_tpl->tpl_vars['MODULE']->value);
-$_prefixVariable5 = ob_get_clean();
-$_smarty_tpl->_assignInScope('VIEWNAME', $_prefixVariable5);?>
+$_prefixVariable1 = ob_get_clean();
+$_smarty_tpl->_assignInScope('VIEWNAME', $_prefixVariable1);?>
 										<?php $_tmp_array = isset($_smarty_tpl->tpl_vars['CUSTOM_VIEW_NAMES']) ? $_smarty_tpl->tpl_vars['CUSTOM_VIEW_NAMES']->value : array();
 if (!(is_array($_tmp_array) || $_tmp_array instanceof ArrayAccess)) {
 settype($_tmp_array, 'array');

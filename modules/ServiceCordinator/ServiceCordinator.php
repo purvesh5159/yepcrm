@@ -3,22 +3,22 @@
 include_once 'modules/Vtiger/CRMEntity.php';
 
 class ServiceCordinator extends Vtiger_CRMEntity {
-        var $table_name = 'vtiger_serviceconrdinator';
-        var $table_index= 'serviceconrdinatorid';
+        var $table_name = 'vtiger_servicecordinator';
+        var $table_index= 'servicecordinatorid';
 
-        var $customFieldTable = Array('vtiger_serviceconrdinatorcf', 'serviceconrdinatorid');
+        var $customFieldTable = Array('vtiger_servicecordinatorcf', 'servicecordinatorid');
 
-        var $tab_name = Array('vtiger_crmentity', 'vtiger_serviceconrdinator', 'vtiger_serviceconrdinatorcf');
+        var $tab_name = Array('vtiger_crmentity', 'vtiger_servicecordinator', 'vtiger_servicecordinatorcf');
 
         var $tab_name_index = Array(
                 'vtiger_crmentity' => 'crmid',
-                'vtiger_serviceconrdinator' => 'serviceconrdinatorid',
-                'vtiger_serviceconrdinatorcf'=>'serviceconrdinatorid');
+                'vtiger_servicecordinator' => 'servicecordinatorid',
+                'vtiger_servicecordinatorcf'=>'servicecordinatorid');
 
         var $list_fields = Array (
                 /* Format: Field Label => Array(tablename, columnname) */
                 // tablename should not have prefix 'vtiger_'
-                'Last Name' => Array('serviceconrdinator', 'lastname'),
+                'Last Name' => Array('servicecordinator', 'lastname'),
                 'Assigned To' => Array('crmentity','smownerid')
         );
         var $list_fields_name = Array (
@@ -34,7 +34,7 @@ class ServiceCordinator extends Vtiger_CRMEntity {
         var $search_fields = Array(
                 /* Format: Field Label => Array(tablename, columnname) */
                 // tablename should not have prefix 'vtiger_'
-                'lastname' => Array('serviceconrdinator', 'lastname'),
+                'lastname' => Array('servicecordinator', 'lastname'),
                 'Assigned To' => Array('vtiger_crmentity','assigned_user_id'),
         );
         var $search_fields_name = Array (

@@ -57,7 +57,7 @@ class HelpDesk_Module_Model extends Vtiger_Module_Model {
 
 
 	/**
-	 * Function returns Tickets grouped by Status
+	 * Function returns Tickets grouped by tickets_status
 	 * @param type $data
 	 * @return <Array>
 	 */
@@ -65,7 +65,7 @@ class HelpDesk_Module_Model extends Vtiger_Module_Model {
 		$db = PearDatabase::getInstance();
 		//TODO need to handle security
 		$params = array();
-		$picklistvaluesmap = getAllPickListValues("ticketstatus");
+		$picklistvaluesmap = getAllPickListValues("tickettickets_status");
         if(in_array('Open', $picklistvaluesmap)) $params[] = 'Open';
         
 		if(php7_count($params) > 0) {

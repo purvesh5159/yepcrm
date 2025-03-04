@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-02-21 04:33:21
+/* Smarty version 4.5.4, created on 2025-03-04 05:03:17
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Settings\LayoutEditor\DefaultValueUi.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67b80211b92940_52566598',
+  'unifunc' => 'content_67c68995050be6_08671604',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67b80211b92940_52566598 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67c68995050be6_08671604 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->isDefaultValueOptionDisabled() != "true") {?><div class="form-group"><label class="control-label fieldLabel col-sm-5"><img src="<?php echo vimage_path('DefaultValue.png');?>
 " height=14 width=14/> &nbsp; <?php echo vtranslate('LBL_DEFAULT_VALUE',$_smarty_tpl->tpl_vars['QUALIFIED_MODULE']->value);?>
 </label><div class="controls col-sm-7"><div class="defaultValueUi"><?php if (!(isset($_smarty_tpl->tpl_vars['NAME_ATTR']->value)) || !$_smarty_tpl->tpl_vars['NAME_ATTR']->value) {

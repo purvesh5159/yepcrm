@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-02-21 08:16:32
+/* Smarty version 4.5.4, created on 2025-03-04 05:35:22
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\HelpDesk\dashboards\OpenTickets.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67b8366079a0d9_41289537',
+  'unifunc' => 'content_67c6911a1cc143_98627024',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67b8366079a0d9_41289537 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67c6911a1cc143_98627024 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="dashboardWidgetHeader">
 	<?php $_smarty_tpl->_subTemplateRender(call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'vtemplate_path' ][ 0 ], array( "dashboards/WidgetHeader.tpl",$_smarty_tpl->tpl_vars['MODULE_NAME']->value )), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-02-21 05:03:26
+/* Smarty version 4.5.4, created on 2025-03-04 05:05:32
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\SummaryWidgets.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67b8091e1f8498_49643741',
+  'unifunc' => 'content_67c68a1c9c0184_27882728',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67b8091e1f8498_49643741 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67c68a1c9c0184_27882728 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <input type="hidden" name="page" value="<?php echo $_smarty_tpl->tpl_vars['PAGING_MODEL']->value->get('page');?>
 " /><input type="hidden" name="pageLimit" value="<?php echo $_smarty_tpl->tpl_vars['PAGING_MODEL']->value->get('limit');?>

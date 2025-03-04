@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-02-21 05:03:22
+/* Smarty version 4.5.4, created on 2025-03-04 05:00:06
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\RelatedActivities.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67b8091a9dc922_90664818',
+  'unifunc' => 'content_67c688d60ee7d0_93599559',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67b8091a9dc922_90664818 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67c688d60ee7d0_93599559 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('MODULE_NAME', "Calendar");?><div class="summaryWidgetContainer"><div class="widget_header clearfix"><h4 class="display-inline-block pull-left"><?php echo vtranslate('LBL_ACTIVITIES',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 </h4><?php $_smarty_tpl->_assignInScope('CALENDAR_MODEL', Vtiger_Module_Model::getInstance('Calendar'));?><div class="pull-right" style="margin-top: -5px;"><?php if ($_smarty_tpl->tpl_vars['CALENDAR_MODEL']->value->isPermitted('CreateView')) {?><button class="btn addButton btn-sm btn-default createActivity toDotask textOverflowEllipsis max-width-100" title="<?php echo vtranslate('LBL_ADD_TASK',$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 " type="button" href="javascript:void(0)" data-url="sourceModule=<?php echo $_smarty_tpl->tpl_vars['RECORD']->value->getModuleName();?>
