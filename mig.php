@@ -1668,4 +1668,113 @@ if ($adb->num_rows($result) == 0) {
 }
 $emm = null;
 
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('StockTransfer');
+$blockInstance = Vtiger_Block::getInstance('LBL_STOCKTRANSFER_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('sparereqdate', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'sparereqdate';
+        $fieldInstance->label = 'Spare Request Date';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'sparereqdate';
+        $fieldInstance->uitype = 5;
+        $fieldInstance->quickcreate = 3;
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'D~O';
+        $fieldInstance->columntype = 'DATE';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+    } else {
+        echo "field is already Present --- doi in HelpDesk Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_CUSTOM_INFORMATION -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('StockTransfer');
+$blockInstance = Vtiger_Block::getInstance('LBL_STOCKTRANSFER_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('sparename', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'sparename';
+        $fieldInstance->label = 'Spare Part Name';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'sparename';
+        $fieldInstance->uitype = '2';
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(200)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+//        $fieldInstance->setPicklistValues(array('PUTTUR'));
+    } else {
+        echo "field is present -- boid In HelpDesk Module --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_TICKET_INFORMATION in HelpDesk -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('StockTransfer');
+$blockInstance = Vtiger_Block::getInstance('LBL_STOCKTRANSFER_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('servicecordinator_id', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'servicecordinator_id';
+        $fieldInstance->label = 'Service Cordinator Name';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'servicecordinator_id';
+        $fieldInstance->uitype = '2';
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(200)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+//        $fieldInstance->setPicklistValues(array('PUTTUR'));
+    } else {
+        echo "field is present -- boid In HelpDesk Module --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_TICKET_INFORMATION in HelpDesk -- <br>";
+}
+
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('StockTransfer');
+$blockInstance = Vtiger_Block::getInstance('LBL_STOCKTRANSFER_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('sparedetails', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'sparedetails';
+        $fieldInstance->label = 'Spare Parts Details';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'sparedetails';
+        $fieldInstance->uitype = '19';
+        $fieldInstance->quickcreate = 3;
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(64)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+    } else {
+        echo "field is already Present --- user_password in ServiceEngineer Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_USERLOGIN_ROLE -- <br>";
+}
+
 ?>
