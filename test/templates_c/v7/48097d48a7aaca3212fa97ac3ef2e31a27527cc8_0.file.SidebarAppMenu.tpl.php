@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-04 05:00:02
+/* Smarty version 4.5.4, created on 2025-03-12 05:20:29
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\partials\SidebarAppMenu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67c688d2b019a2_52628095',
+  'unifunc' => 'content_67d1199d7281f3_64425257',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67c688d2b019a2_52628095 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67d1199d7281f3_64425257 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="app-menu hide" id="app-menu">
 	<div class="container-fluid">

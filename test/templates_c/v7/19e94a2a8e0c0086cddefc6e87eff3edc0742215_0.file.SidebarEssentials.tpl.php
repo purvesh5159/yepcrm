@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-04 05:35:23
+/* Smarty version 4.5.4, created on 2025-03-12 05:20:51
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\partials\SidebarEssentials.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67c6911b0140e1_66183508',
+  'unifunc' => 'content_67d119b347b379_51860918',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67c6911b0140e1_66183508 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67d119b347b379_51860918 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'D:\\wamp\\www\\yepcrm\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.count.php','function'=>'smarty_modifier_count',),));
 ?>
 <div class="sidebar-menu">

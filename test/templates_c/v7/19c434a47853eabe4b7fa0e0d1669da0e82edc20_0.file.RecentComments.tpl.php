@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-04 05:05:33
+/* Smarty version 4.5.4, created on 2025-03-12 05:21:03
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\RecentComments.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67c68a1d4cd5c9_65373150',
+  'unifunc' => 'content_67d119bf856418_83047418',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67c68a1d4cd5c9_65373150 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67d119bf856418_83047418 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('COMMENT_TEXTAREA_DEFAULT_ROWS', "2");
 $_smarty_tpl->_assignInScope('PRIVATE_COMMENT_MODULES', Vtiger_Functions::getPrivateCommentModules());
 $_smarty_tpl->_assignInScope('IS_CREATABLE', $_smarty_tpl->tpl_vars['COMMENTS_MODULE_MODEL']->value->isPermitted('CreateView'));

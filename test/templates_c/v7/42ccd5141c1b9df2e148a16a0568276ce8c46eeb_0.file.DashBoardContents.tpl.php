@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-04 05:35:13
+/* Smarty version 4.5.4, created on 2025-03-12 05:20:30
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\dashboards\DashBoardContents.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67c69111415342_05649930',
+  'unifunc' => 'content_67d1199e6e39d1_45305673',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67c69111415342_05649930 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67d1199e6e39d1_45305673 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    
 <div class="dashBoardContainer clearfix"><div class="tabContainer"><ul class="nav nav-tabs tabs sortable container-fluid"><?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['DASHBOARD_TABS']->value, 'TAB_DATA', false, 'index');

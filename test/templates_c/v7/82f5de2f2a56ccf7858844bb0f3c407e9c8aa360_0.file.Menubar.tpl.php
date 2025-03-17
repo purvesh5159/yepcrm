@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-04 05:00:03
+/* Smarty version 4.5.4, created on 2025-03-12 05:20:50
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\partials\Menubar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67c688d38d0a78_38108183',
+  'unifunc' => 'content_67d119b2f40f96_08207733',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67c688d38d0a78_38108183 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67d119b2f40f96_08207733 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['MENU_STRUCTURE']->value) {
 $_smarty_tpl->_assignInScope('topMenus', $_smarty_tpl->tpl_vars['MENU_STRUCTURE']->value->getTop());
 $_smarty_tpl->_assignInScope('moreMenus', $_smarty_tpl->tpl_vars['MENU_STRUCTURE']->value->getMore());?>

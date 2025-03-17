@@ -1777,4 +1777,42 @@ if ($blockInstance) {
     echo " block does not exits --- LBL_USERLOGIN_ROLE -- <br>";
 }
 
+$invoiceModule = null;
+$blockInstance = null;
+$fieldInstance = null;
+$invoiceModule = Vtiger_Module::getInstance('Engineer');
+$blockInstance = Vtiger_Block::getInstance('LBL_ENGINEER_INFORMATION', $invoiceModule);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('servicecordintor_id', $invoiceModule);
+    if (!$fieldInstance) {
+        $field = new Vtiger_Field();
+        $field->name = 'servicecordintor_id';
+        $field->column = 'servicecordintor_id';
+        $field->uitype = 10;
+        $field->table = $invoiceModule->basetable;
+        $field->label = 'Service Cordinator Name';
+        $field->summaryfield = 1;
+        $field->readonly = 1;
+        $field->presence = 2;
+        $field->typeofdata = 'I~O';
+        $field->columntype = 'INT(10)';
+        $field->quickcreate = 3;
+        $field->displaytype = 1;
+        $field->masseditable = 1;
+        $field->defaultvalue = 0;
+        $blockInstance->addField($field);
+    } else {
+        echo "field is present -- vendor_id HelpDesk --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_USERLOGIN_ROLE in HelpDesk -- <br>";
+}
+
+/*$moduleInstance = Vtiger_Module::getInstance('ServiceCordinator');
+        $accountsModule = Vtiger_Module::getInstance('Engineer');
+        $relationLabel  = 'Engineer';
+        $moduleInstance->setRelatedList(
+            $accountsModule, $relationLabel, Array('ADD','SELECT'),'get_related_list'
+        );
+*/
 ?>

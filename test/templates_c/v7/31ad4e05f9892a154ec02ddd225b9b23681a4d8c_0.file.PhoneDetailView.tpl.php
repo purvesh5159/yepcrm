@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-04 05:02:03
+/* Smarty version 4.5.4, created on 2025-03-12 05:21:06
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\uitypes\PhoneDetailView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67c6894b7243d1_12213388',
+  'unifunc' => 'content_67d119c200e8f1_63265332',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67c6894b7243d1_12213388 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67d119c200e8f1_63265332 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'D:\\wamp\\www\\yepcrm\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.regex_replace.php','function'=>'smarty_modifier_regex_replace',),));
 ?>
 

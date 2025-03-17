@@ -101,6 +101,19 @@ if (isset($_POST['upload']) && isset($_FILES['csv_file'])) {
                     $val = isRecordExits($custname,$address,$city,$state,$pincode);
                     $engval = isengRecordExits($engname,$engcode);
                     $deaval = isdelRecordExits($deaname,$deamob);
+                    $servval = isservRecordExits($servicecord);
+
+                    if (empty($servval)) {
+                        // Create a new Account
+                        $ServiceCordinator = CRMEntity::getInstance('ServiceCordinator');
+                        $ServiceCordinator->column_fields['assigned_user_id'] = 1;
+                        $ServiceCordinator->column_fields['sm_code'] = $servicecord.'00XX';
+                        $ServiceCordinator->column_fields['lastname'] = $servicecord;
+                        $ServiceCordinator->save('ServiceCordinator');
+                        $ServiceCordinatorModuleId = $ServiceCordinator->id;
+                    } else {
+                        $ServiceCordinatorId = $servval;
+                    }
 
                        // Check and create or update Engineer
                     if (empty($engval)) {
@@ -109,6 +122,7 @@ if (isset($_POST['upload']) && isset($_FILES['csv_file'])) {
                         $Engineer->column_fields['assigned_user_id'] = 1;
                         $Engineer->column_fields['engineer_code'] = $engcode;
                         $Engineer->column_fields['engineer_name'] = $engname;
+                        $Engineer->column_fields['servicecordintor_id'] = $ServiceCordinatorId;
                         $Engineer->column_fields['mobile_no'] = $engmob;
                         $Engineer->save('Engineer');
                         $EngineerModuleId = $Engineer->id;
@@ -272,6 +286,20 @@ function createRelationBetweenHelpDeskAndEngineer($EngineerModuleId, $HelpDeskMo
     $relation->addRelation('Engineer', $EngineerModuleId, 'HelpDesk', $HelpDeskModuleId);
 }
 
+function createRelationBetweenServiceCordinatorAndEngineer($ServiceCordinatorId, $EngineerModuleId)
+{
+    global $adb;
+    $relation = new Relation();
+    $relation->addRelation('ServiceCordinator', $ServiceCordinatorId, 'Engineer', $EngineerModuleId);
+}
+
+function createRelationBetweenHelpDeskAndServiceCordinator($ServiceCordinatorId, $HelpDeskModuleId)
+{
+    global $adb;
+    $relation = new Relation();
+    $relation->addRelation('ServiceCordinator', $ServiceCordinatorId, 'HelpDesk', $HelpDeskModuleId);
+}
+
 function isRecordExits($custname,$address,$city,$state,$pincode)
 {
     
@@ -314,7 +342,7 @@ function isengRecordExits($engname,$engcode)
 function isdelRecordExits($deaname,$deamob)
 {
     global $adb;
-    $sql = 'SELECT vendorid FROM  vtiger_vendor
+    $sql = 'SELECT vendorid FROM vtiger_vendor
             INNER JOIN vtiger_crmentity
             ON vtiger_crmentity.crmid =  vtiger_vendor.vendorid
             WHERE vendorname = ? AND phone = ? AND vtiger_crmentity.deleted = 0';
@@ -323,6 +351,23 @@ function isdelRecordExits($deaname,$deamob)
     if ($num_rows > 0) {
         $dataRow = $adb->fetchByAssoc($sqlResult, 0);
         return $dataRow['vendorid'];
+    } else {
+        return '';
+    }
+}
+
+function isservRecordExits($servicecord)
+{
+    global $adb;
+    $sql = 'SELECT servicecordinatorid FROM vtiger_servicecordinator
+            INNER JOIN vtiger_crmentity
+            ON vtiger_crmentity.crmid =  vtiger_servicecordinator.servicecordinatorid
+            WHERE lastname = ? AND vtiger_crmentity.deleted = 0';
+    $sqlResult = $adb->pquery($sql, array($servicecord));
+    $num_rows = $adb->num_rows($sqlResult);
+    if ($num_rows > 0) {
+        $dataRow = $adb->fetchByAssoc($sqlResult, 0);
+        return $dataRow['servicecordintorid'];
     } else {
         return '';
     }

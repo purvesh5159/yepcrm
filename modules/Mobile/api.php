@@ -1,24 +1,24 @@
 <?php
-/*+**********************************************************************************
- * The contents of this file are subject to the vtiger CRM Public License Version 1.0
- * ("License"); You may not use this file except in compliance with the License
- * The Original Code is:  vtiger CRM Open Source
- * The Initial Developer of the Original Code is vtiger.
- * Portions created by vtiger are Copyright (C) vtiger.
- * All Rights Reserved.
- ************************************************************************************/
 header('Content-Type: text/json');
+header("Access-Control-Allow-Origin: *");
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
+error_reporting(0);
+ini_set('display_warnings', 0);
+$uriSegments = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+$_POST['_operation'] = $uriSegments[4];
+
 
 chdir (dirname(__FILE__) . '/../../');
 
 /**
  * URL Verfication - Required to overcome Apache mis-configuration and leading to shared setup mode.
  */
+require_once 'vendor/autoload.php';
 require_once 'config.php';
 if (file_exists('config_override.php')) {
     include_once 'config_override.php';
 }
-require_once 'vendor/autoload.php';
 
 // Define GetRelatedList API before including the core files
 // NOTE: Make sure GetRelatedList function_exists check is made in include/utils/RelatedListView.php
@@ -43,8 +43,9 @@ if(!defined('MOBILE_API_CONTROLLER_AVOID_TRIGGER')) {
 	$clientRequestValues = null;
 	if(stripos($_SERVER['CONTENT_TYPE'], 'application/json')!==false) {
 		$clientRequestValues = json_decode(file_get_contents("php://input"), true);
+		$clientRequestValues['_operation'] = $uriSegments[5];
 	} else {
-		$clientRequestValues = $_POST;
+		$clientRequestValues = array_merge($_GET, $_POST);
 	}
 
 	$clientRequestValuesRaw = array();
@@ -52,7 +53,13 @@ if(!defined('MOBILE_API_CONTROLLER_AVOID_TRIGGER')) {
 	if (get_magic_quotes_gpc()) {
 	    $clientRequestValues = stripslashes_recursive($clientRequestValues);
 	}
-
+	global $log;
+	$log->debug("<<<<<<<<<<<<<<<<<<<<<<Recieved From Mobile>>>>>>>>>>>>>>>>>>>>>");
+	$log->debug(json_encode($clientRequestValues));
+	$log->debug("<<<<<<<<<<<<<<<<<<<<<<Recieved From MobileEnd>>>>>>>>>>>>>>>>>>>>>");
+	//ini_set('display_errors', 1);
+	//ini_set('display_startup_errors', 1);
+	//error_reporting(E_ALL);
 	require_once dirname(__FILE__) . '/api.v1.php';
 	$targetController = Mobile_APIV1_Controller::getInstance();
 	$targetController->process(new Mobile_API_Request($clientRequestValues, $clientRequestValuesRaw));

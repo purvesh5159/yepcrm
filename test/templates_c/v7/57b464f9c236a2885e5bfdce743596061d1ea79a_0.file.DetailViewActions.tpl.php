@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-04 05:00:04
+/* Smarty version 4.5.4, created on 2025-03-12 05:20:58
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\DetailViewActions.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67c688d46555e3_83720802',
+  'unifunc' => 'content_67d119bae4c331_23199541',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67c688d46555e3_83720802 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67d119bae4c331_23199541 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'D:\\wamp\\www\\yepcrm\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.count.php','function'=>'smarty_modifier_count',),));
 ?>
 <div class="col-lg-6 detailViewButtoncontainer"><div class="pull-right btn-toolbar"><div class="btn-group"><?php $_smarty_tpl->_assignInScope('STARRED', $_smarty_tpl->tpl_vars['RECORD']->value->get('starred'));
@@ -63,8 +63,8 @@ _detailView_moreAction_<?php echo Vtiger_Util_Helper::replaceSpaceWithUnderScore
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?></ul><?php }?></div><?php ob_start();
 echo $_smarty_tpl->tpl_vars['NO_PAGINATION']->value;
-$_prefixVariable7 = ob_get_clean();
-if (!$_prefixVariable7) {?><div class="btn-group pull-right"><button class="btn btn-default " id="detailViewPreviousRecordButton" <?php if (empty($_smarty_tpl->tpl_vars['PREVIOUS_RECORD_URL']->value)) {?> disabled="disabled" <?php } else { ?> onclick="window.location.href = '<?php echo $_smarty_tpl->tpl_vars['PREVIOUS_RECORD_URL']->value;?>
+$_prefixVariable3 = ob_get_clean();
+if (!$_prefixVariable3) {?><div class="btn-group pull-right"><button class="btn btn-default " id="detailViewPreviousRecordButton" <?php if (empty($_smarty_tpl->tpl_vars['PREVIOUS_RECORD_URL']->value)) {?> disabled="disabled" <?php } else { ?> onclick="window.location.href = '<?php echo $_smarty_tpl->tpl_vars['PREVIOUS_RECORD_URL']->value;?>
 &app=<?php echo $_smarty_tpl->tpl_vars['SELECTED_MENU_CATEGORY']->value;?>
 '" <?php }?> ><i class="fa fa-chevron-left"></i></button><button class="btn btn-default  " id="detailViewNextRecordButton"<?php if (empty($_smarty_tpl->tpl_vars['NEXT_RECORD_URL']->value)) {?> disabled="disabled" <?php } else { ?> onclick="window.location.href = '<?php echo $_smarty_tpl->tpl_vars['NEXT_RECORD_URL']->value;?>
 &app=<?php echo $_smarty_tpl->tpl_vars['SELECTED_MENU_CATEGORY']->value;?>

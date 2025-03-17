@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-04 05:35:20
+/* Smarty version 4.5.4, created on 2025-03-12 05:36:19
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\dashboards\HistoryContents.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67c69118c26220_88926551',
+  'unifunc' => 'content_67d11d5331f928_03527997',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67c69118c26220_88926551 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67d11d5331f928_03527997 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div style='padding:5px;'>
 	<?php if ($_smarty_tpl->tpl_vars['HISTORIES']->value != false) {?>

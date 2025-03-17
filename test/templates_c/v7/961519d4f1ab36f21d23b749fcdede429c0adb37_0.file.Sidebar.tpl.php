@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-04 05:03:09
+/* Smarty version 4.5.4, created on 2025-03-12 07:50:39
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Settings\Vtiger\Sidebar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67c6898d66c609_49794947',
+  'unifunc' => 'content_67d13ccfd80b76_36905003',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:modules/Users/UsersSidebar.tpl' => 1,
   ),
 ),false)) {
-function content_67c6898d66c609_49794947 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67d13ccfd80b76_36905003 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['USER_MODEL']->value->isAdminUser()) {
 $_smarty_tpl->_assignInScope('SETTINGS_MODULE_MODEL', Settings_Vtiger_Module_Model::getInstance());
 $_smarty_tpl->_assignInScope('SETTINGS_MENUS', $_smarty_tpl->tpl_vars['SETTINGS_MODULE_MODEL']->value->getMenus());?><div class="settingsgroup"><div><input type="text" placeholder="<?php echo vtranslate('LBL_SEARCH_FOR_SETTINGS',$_smarty_tpl->tpl_vars['QUALIFIED_MODULE']->value);?>
