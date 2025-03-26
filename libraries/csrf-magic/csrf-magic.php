@@ -203,6 +203,7 @@ function csrf_check($fatal = true) {
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') return true;
     csrf_start();
     $name = $GLOBALS['csrf']['input-name'];
+    error_log("CSRF Token: " . print_r($_POST[$name] ?? 'not set', true)); // Log the token
     $ok = false;
     $tokens = '';
     do {
@@ -303,6 +304,12 @@ function csrf_callback($tokens) {
  * It is configurable by setting $GLOBALS['csrf']['callback'] in this file
  */
 function vtResponseForIllegalAccess() {
+    global $log;
+    $log->debug("<<<<<<<<<<<<<<<<<<<<<<Received From Mobile>>>>>>>>>>>>>>>>>>>>>"); 
+    $log->debug('CSRF check failed: ' . print_r($_POST, true)); 
+    $log->debug("<<<<<<<<<<<<<<<<<<<<<<Received From Mobile End>>>>>>>>>>>>>>>>>>>>>"); 
+
+    error_log('CSRF check failed: ' . print_r($_POST, true)); // Log POST data
     echo 'Invalid request';
 }
 

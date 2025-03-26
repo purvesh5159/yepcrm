@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-12 05:20:30
+/* Smarty version 4.5.4, created on 2025-03-25 12:33:45
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\IndexPostProcess.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67d1199e9c9900_66111779',
+  'unifunc' => 'content_67e2a2a9d86582_61266352',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67d1199e9c9900_66111779 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67e2a2a9d86582_61266352 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 	</div>
 </div>

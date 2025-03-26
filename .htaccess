@@ -1,10 +1,2 @@
-# Place this .htaccess file in your Vtiger root directory
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    
-    # Rewrite API requests to the index.php file
-    RewriteRule ^modules/Mobile/([a-zA-Z0-9_]+)$ modules/Mobile/index.php [QSA,L]
-    
-    # Keep the original api.php endpoint working for backward compatibility
-    RewriteRule ^modules/Mobile/api.php$ modules/Mobile/api.php [QSA,L]
-</IfModule>
+
+Options -Indexes

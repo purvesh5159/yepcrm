@@ -12,11 +12,16 @@ include_once dirname(__FILE__) . '/../../../include/Zend/Json.php';
 class Mobile_API_Response {
 	private $error = NULL;
 	private $result = NULL;
+	private $apiSuccessMessage = '';
 	
 	function setError($code, $message) {
 		$error = array('code' => $code, 'message' => $message);
 		$this->error = $error;
 	}
+
+	function setApiSucessMessage($apiSuccessMessage) {
+			$this->apiSuccessMessage = $apiSuccessMessage;
+ 	}
 	
 	function getError() {
 		return $this->error;
@@ -41,15 +46,23 @@ class Mobile_API_Response {
 	function prepareResponse() {
 		$response = array();
 		if($this->result === NULL) {
-			$response['success'] = false;
-			$response['error'] = $this->error;
+			// $response['success'] = false;
+			$response['statuscode'] = 0;
+			$response['statusMessage'] =  $this->error['message'];
+			if (!empty($this->error['id'])) {
+				$response['id'] =  $this->error['id'];
+			}
+			$newEmptyObject = new stdClass();
+			$response['data'] = $newEmptyObject;
 		} else {
-			$response['success'] = true;
-			$response['result'] = $this->result;
+			// $response['success'] = true;
+			$response['statuscode'] = 1;
+			$response['data'] = $this->result;
+			$response['statusMessage'] = $this->apiSuccessMessage;
 		}
 		return $response;
 	}
-	
+
 	function emitJSON() {
 		return Zend_Json::encode($this->prepareResponse());
 	}

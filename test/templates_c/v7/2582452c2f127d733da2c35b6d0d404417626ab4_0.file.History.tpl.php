@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-12 05:36:18
+/* Smarty version 4.5.4, created on 2025-03-25 12:40:17
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\dashboards\History.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67d11d52b253b3_77792277',
+  'unifunc' => 'content_67e2a43176e488_58919616',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67d11d52b253b3_77792277 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67e2a43176e488_58919616 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'D:\\wamp\\www\\yepcrm\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.count.php','function'=>'smarty_modifier_count',),));
 ?>
 <div class="dashboardWidgetHeader clearfix">

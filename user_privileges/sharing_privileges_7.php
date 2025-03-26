@@ -2,7 +2,7 @@
 
 
 //This is the sharing access privilege file
-$defaultOrgSharingPermission=array('2'=>2,'4'=>2,'6'=>2,'7'=>2,'9'=>3,'13'=>2,'16'=>3,'20'=>2,'21'=>2,'22'=>2,'23'=>2,'26'=>2,'8'=>2,'14'=>2,'34'=>3,'35'=>2,'36'=>2,'38'=>2,'42'=>2,'43'=>2,'44'=>2,'45'=>2,'47'=>2,'18'=>2,'10'=>2,'55'=>2,'56'=>2,'57'=>2,'58'=>2,'60'=>2,);
+$defaultOrgSharingPermission=array('2'=>2,'4'=>2,'6'=>2,'7'=>2,'9'=>3,'13'=>2,'16'=>3,'20'=>2,'21'=>2,'22'=>2,'23'=>2,'26'=>2,'8'=>2,'14'=>2,'34'=>3,'35'=>2,'36'=>2,'38'=>2,'42'=>2,'43'=>2,'44'=>2,'45'=>2,'47'=>2,'18'=>2,'10'=>2,'55'=>2,'56'=>2,'57'=>2,'58'=>3,'60'=>2,'61'=>2,);
 
 $related_module_share=array(2=>array(6,),13=>array(6,),20=>array(6,2,),22=>array(6,2,20,),23=>array(6,22,),);
 
@@ -134,9 +134,9 @@ $Expenses_share_read_permission=array('ROLE'=>array(),'GROUP'=>array());
 
 $Expenses_share_write_permission=array('ROLE'=>array(),'GROUP'=>array());
 
-$Tickets_share_read_permission=array('ROLE'=>array(),'GROUP'=>array());
+$Tickets_share_read_permission=array('ROLE'=>array('H6'=>array(5,),),'GROUP'=>array());
 
-$Tickets_share_write_permission=array('ROLE'=>array(),'GROUP'=>array());
+$Tickets_share_write_permission=array('ROLE'=>array('H6'=>array(5,),),'GROUP'=>array());
 
 $ServiceCordinator_share_read_permission=array('ROLE'=>array(),'GROUP'=>array());
 
@@ -145,5 +145,9 @@ $ServiceCordinator_share_write_permission=array('ROLE'=>array(),'GROUP'=>array()
 $StockTransfer_share_read_permission=array('ROLE'=>array(),'GROUP'=>array());
 
 $StockTransfer_share_write_permission=array('ROLE'=>array(),'GROUP'=>array());
+
+$Attendance_share_read_permission=array('ROLE'=>array(),'GROUP'=>array());
+
+$Attendance_share_write_permission=array('ROLE'=>array(),'GROUP'=>array());
 
 ?>

@@ -69,6 +69,7 @@ class Mobile_WS_SaveRecord extends Mobile_WS_FetchRecordWithGrouping {
                 $request->set('record', $this->recordValues['id']);
                 // Gather response with full details
                 $response = parent::process($request);
+				$response->setApiSucessMessage('Successfully Fetched Data');
 				return $response;
             } else {
                 $response->setError("RECORD_NOT_FOUND", "Record does not exist");

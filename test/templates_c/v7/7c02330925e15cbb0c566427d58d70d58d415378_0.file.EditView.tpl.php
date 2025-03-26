@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-12 05:21:11
+/* Smarty version 4.5.4, created on 2025-03-25 12:33:44
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\EditView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67d119c70cf857_34569576',
+  'unifunc' => 'content_67e2a2a89660a4_03187483',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67d119c70cf857_34569576 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67e2a2a89660a4_03187483 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="main-container clearfix"><div id="modnavigator" class="module-nav editViewModNavigator"><div class="hidden-xs hidden-sm mod-switcher-container"><?php $_smarty_tpl->_subTemplateRender(call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'vtemplate_path' ][ 0 ], array( "partials/Menubar.tpl",$_smarty_tpl->tpl_vars['MODULE']->value )), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?></div></div><div class="editViewPageDiv viewContent"><div class="col-sm-12 col-xs-12 content-area <?php if ($_smarty_tpl->tpl_vars['LEFTPANELHIDE']->value == '1') {?> full-width <?php }?>"><form class="form-horizontal recordEditView" id="EditView" name="edit" method="post" action="index.php" enctype="multipart/form-data"><div class="editViewHeader"><div class='row'><div class="col-lg-12 col-md-12 col-lg-pull-0"><?php $_smarty_tpl->_assignInScope('SINGLE_MODULE_NAME', ('SINGLE_').($_smarty_tpl->tpl_vars['MODULE']->value));
@@ -35,8 +35,8 @@ if ($_smarty_tpl->tpl_vars['RECORD_ID']->value != '') {?><h4 class="editHeader" 
 </h4><?php }?></div></div></div><div class="editViewBody"><div class="editViewContents"><?php $_smarty_tpl->_assignInScope('WIDTHTYPE', $_smarty_tpl->tpl_vars['USER_MODEL']->value->get('rowheight'));
 ob_start();
 echo $_smarty_tpl->tpl_vars['MODULE']->value;
-$_prefixVariable1 = ob_get_clean();
-$_smarty_tpl->_assignInScope('QUALIFIED_MODULE_NAME', $_prefixVariable1);
+$_prefixVariable5 = ob_get_clean();
+$_smarty_tpl->_assignInScope('QUALIFIED_MODULE_NAME', $_prefixVariable5);
 $_smarty_tpl->_assignInScope('IS_PARENT_EXISTS', strpos($_smarty_tpl->tpl_vars['MODULE']->value,":"));
 if ($_smarty_tpl->tpl_vars['IS_PARENT_EXISTS']->value) {
 $_smarty_tpl->_assignInScope('SPLITTED_MODULE', call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'explode' ][ 0 ], array( ":",$_smarty_tpl->tpl_vars['MODULE']->value )));?><input type="hidden" name="module" value="<?php echo $_smarty_tpl->tpl_vars['SPLITTED_MODULE']->value[1];?>

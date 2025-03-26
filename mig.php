@@ -1815,4 +1815,139 @@ if ($blockInstance) {
             $accountsModule, $relationLabel, Array('ADD','SELECT'),'get_related_list'
         );
 */
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('Attendance');
+$blockInstance = Vtiger_Block::getInstance('LBL_ATTENDANCE_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('employeeid', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'employeeid';
+        $fieldInstance->label = 'Employee Id';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'employeeid';
+        $fieldInstance->uitype = '2';
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(200)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+//        $fieldInstance->setPicklistValues(array('PUTTUR'));
+    } else {
+        echo "field is present -- boid In HelpDesk Module --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_TICKET_INFORMATION in HelpDesk -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('Attendance');
+$blockInstance = Vtiger_Block::getInstance('LBL_ATTENDANCE_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('employee_name', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'employee_name';
+        $fieldInstance->label = 'Employee Name';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'employee_name';
+        $fieldInstance->uitype = '2';
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(200)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+//        $fieldInstance->setPicklistValues(array('PUTTUR'));
+    } else {
+        echo "field is present -- boid In HelpDesk Module --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_TICKET_INFORMATION in HelpDesk -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('Attendance');
+$blockInstance = Vtiger_Block::getInstance('LBL_ATTENDANCE_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('attedance_status', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'attedance_status';
+        $fieldInstance->label = 'Status';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'attedance_status';
+        $fieldInstance->uitype = '16';
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(100)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+        $fieldInstance->setPicklistValues(array('Check In', 'Check Out'));
+    } else {
+        echo "field is already Present --- ticket_type in HelpDesk Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_CUSTOM_INFORMATION -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('Attendance');
+$blockInstance = Vtiger_Block::getInstance('LBL_ATTENDANCE_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('checkout_latitude', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'checkout_latitude';
+        $fieldInstance->label = 'Checkout Latitude';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'checkout_latitude';
+        $fieldInstance->uitype = '2';
+        $fieldInstance->presence = '2';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(200)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+//        $fieldInstance->setPicklistValues(array('PUTTUR'));
+    } else {
+        echo "field is present -- boid In HelpDesk Module --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_TICKET_INFORMATION in HelpDesk -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('Attendance');
+$blockInstance = Vtiger_Block::getInstance('LBL_ATTENDANCE_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('checkout_longitude', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'checkout_longitude';
+        $fieldInstance->label = 'Checkout Longitude';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'checkout_longitude';
+        $fieldInstance->uitype = '2';
+        $fieldInstance->presence = '2';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(200)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+//        $fieldInstance->setPicklistValues(array('PUTTUR'));
+    } else {
+        echo "field is present -- boid In HelpDesk Module --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_TICKET_INFORMATION in HelpDesk -- <br>";
+}
 ?>

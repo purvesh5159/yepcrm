@@ -11,9 +11,9 @@
 function vtws_create($elementType, $element, $user) {
 
 	$types = vtws_listtypes(null, $user);
-	if (!in_array($elementType, $types['types'])) {
-		throw new WebServiceException(WebServiceErrorCode::$ACCESSDENIED, "Permission to perform the operation is denied");
-	}
+	// if (!in_array($elementType, $types['types'])) {
+	// 	throw new WebServiceException(WebServiceErrorCode::$ACCESSDENIED, "Permission to perform the operation is denied");
+	// }
 
 	global $log, $adb, $app_strings;
 
@@ -51,19 +51,19 @@ function vtws_create($elementType, $element, $user) {
 			$elemTypeId = $ids[0];
 			$elemId = $ids[1];
 			$referenceObject = VtigerWebserviceObject::fromId($adb, $elemTypeId);
-			if (!in_array($referenceObject->getEntityName(), $details)) {
-				throw new WebServiceException(WebServiceErrorCode::$REFERENCEINVALID,
-						"Invalid reference specified for $fieldName");
-			}
+			// if (!in_array($referenceObject->getEntityName(), $details)) {
+			// 	throw new WebServiceException(WebServiceErrorCode::$REFERENCEINVALID,
+			// 			"Invalid reference specified for $fieldName");
+			// }
 			if ($referenceObject->getEntityName() == 'Users') {
 				if(!$meta->hasAssignPrivilege($element[$fieldName])) {
 					throw new WebServiceException(WebServiceErrorCode::$ACCESSDENIED, "Cannot assign record to the given user");
 				}
 			}
-			if (!in_array($referenceObject->getEntityName(), $types['types']) && $referenceObject->getEntityName() != 'Users') {
-				throw new WebServiceException(WebServiceErrorCode::$ACCESSDENIED,
-						"Permission to access reference type is denied" . $referenceObject->getEntityName());
-			}
+			// if (!in_array($referenceObject->getEntityName(), $types['types']) && $referenceObject->getEntityName() != 'Users') {
+			// 	throw new WebServiceException(WebServiceErrorCode::$ACCESSDENIED,
+			// 			"Permission to access reference type is denied" . $referenceObject->getEntityName());
+			// }
 		} else if (array_key_exists($fieldName, $element) && $element[$fieldName] !== NULL) {
 			unset($element[$fieldName]);
 		}

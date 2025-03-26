@@ -36,6 +36,13 @@ class Mobile_APIV1_Controller {
 		'history'					=> array('file' => '/api/ws/History.php',					'class' => 'Mobile_WS_History'),
 		'taxByType'					=> array('file' => '/api/ws/TaxByType.php',					'class' => 'Mobile_WS_TaxByType'),
 		'fetchModuleOwners'			=> array('file' => '/api/ws/FetchModuleOwners.php',			'class' => 'Mobile_WS_FetchModuleOwners'),
+		'GetProfileData'			=> array('file' => '/api/ws/GetProfileInfo.php',			'class' => 'Mobile_WS_GetProfileInfo'),
+		'UpdateProfile'			    => array('file' => '/api/ws/UpdateProfile.php',			    'class' => 'Mobile_WS_UpdateProfile'),
+		'GetTicketListByStatus'	    => array('file' => '/api/ws/GetTicketListByStatus.php',	    'class' => 'Mobile_WS_GetTicketListByStatus'),
+		'GetRecordDetail'           => array('file' => '/api/ws/GetRecordDetail.php',	        'class' => 'Mobile_WS_GetRecordDetail'),
+        'GetCheckInCheckOutStatus'  => array('file' => '/api/ws/GetCheckInCheckOutStatus.php',	'class' => 'Mobile_WS_GetCheckInCheckOutStatus'),
+		'CheckOut'                  => array('file' => '/api/ws/CheckOut.php',               	'class' => 'Mobile_WS_CheckOut'),
+
 	);
 
 	protected function initSession(Mobile_API_Request $request) {

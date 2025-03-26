@@ -22,7 +22,7 @@
 		$meta = $handler->getMeta();
 		$entityName = $meta->getObjectEntityName($id);
 		$types = vtws_listtypes(null, $user);
-		if(!in_array($entityName,$types['types'])){
+		/*if(!in_array($entityName,$types['types'])){
 			throw new WebServiceException(WebServiceErrorCode::$ACCESSDENIED,"Permission to perform the operation is denied");
 		}
 		if($meta->hasReadAccess()!==true){
@@ -40,7 +40,7 @@
 		$idComponents = vtws_getIdComponents($id);
 		if(!$meta->exists($idComponents[1])){
 			throw new WebServiceException(WebServiceErrorCode::$RECORDNOTFOUND,"Record you are trying to access is not found");
-		}
+		}*/
 		
 		$entity = $handler->retrieve($id);
 		VTWS_PreserveGlobal::flush();

@@ -74,7 +74,7 @@ class Tickets extends Vtiger_CRMEntity {
         function save_module($module)
 	{
 		//Inserting into Ticket Comment Table
-		$this->insertIntoTicketCommentTable("vtiger_ticketcomments",$module);
+		//$this->insertIntoTicketCommentTable("vtiger_ticketcomments",$module);
 
 		//Inserting into vtiger_attachments
 		$this->insertIntoAttachment($this->id,$module);

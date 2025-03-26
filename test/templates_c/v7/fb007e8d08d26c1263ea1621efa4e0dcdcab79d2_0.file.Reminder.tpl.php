@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-12 05:36:17
+/* Smarty version 4.5.4, created on 2025-03-25 12:33:46
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Settings\ITS4YouInstaller\Reminder.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67d11d518b6200_22068532',
+  'unifunc' => 'content_67e2a2aa9f8765_09099677',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67d11d518b6200_22068532 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67e2a2aa9f8765_09099677 (Smarty_Internal_Template $_smarty_tpl) {
 ?><li class="its4you_installer_menu"><div class="dropdown pull-left"><div class="dropdown-toggle displayInlineBlock" data-toggle="dropdown" aria-expanded="true"><a href="#" class="<?php echo $_smarty_tpl->tpl_vars['MODULE']->value;?>
 _menu_icon fa installer_icon"><div class="its4you_installer_badge numberCircle hide"></div></a></div><ul class="dropdown-menu its4you_installer_dropdown"><div id="its4you_installer_title"><div class="its4you_installer_icon"></div><div class="its4you_installer_text"><b><?php echo vtranslate($_smarty_tpl->tpl_vars['MODULE']->value,$_smarty_tpl->tpl_vars['MODULE']->value);?>
  <?php echo vtranslate('LBL_ALERTS',$_smarty_tpl->tpl_vars['QUALIFIED_MODULE']->value);?>

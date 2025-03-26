@@ -230,4 +230,39 @@ class Tickets_Module_Model extends Vtiger_Module_Model {
 
 		return $relatedListFields;
 	}
+
+	public function getTicketsByStatusCountsForUser($owner, $type) {
+		$db = PearDatabase::getInstance();
+		
+		// Use parameterized queries to prevent SQL injection
+		$result = $db->pquery("SELECT COUNT(*) as count, 
+								CASE WHEN vtiger_tickets.tickets_status IS NULL OR vtiger_tickets.tickets_status = '' 
+									 THEN 'LBL_BLANK' 
+									 ELSE vtiger_tickets.tickets_status END AS statusvalue 
+								FROM vtiger_tickets 
+								INNER JOIN vtiger_crmentity ON vtiger_tickets.ticketsid = vtiger_crmentity.crmid 
+								AND vtiger_crmentity.deleted = 0
+								WHERE vtiger_crmentity.smownerid = ? 
+								AND vtiger_tickets.tickets_status = ? 
+								GROUP BY statusvalue 
+								ORDER BY statusvalue",
+								array($owner, $type));
+		
+		$availablePicklist = [];
+		$statusObject = [];
+		$num_rows = $db->num_rows($result);
+		
+		for ($i = 0; $i < $num_rows; $i++) {
+			$row = $db->query_result_rowdata($result, $i);
+			$ticketStatusVal = $row['statusvalue'];
+			$count = $row['count'];
+	
+			// Prepare the status key for the output
+			$ticketStatusValKey = str_replace(' ', '', $ticketStatusVal);
+			$statusObject[$ticketStatusValKey . 'Count'] = $count;
+		}
+	
+		return $statusObject; // Return the entire status object
+	}
+	
 }

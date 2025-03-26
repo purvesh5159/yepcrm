@@ -93,6 +93,16 @@ class Mobile_WS_ListModuleRecords extends Mobile_WS_Controller {
 							$i = $headerFieldColsMap[$i];
 						}	
 						$record[$i]= decode_html($value); 
+						if ($i == 'status') {
+							$record['tickets_status'] = $value;
+						} else if ($i == 'ticketsid') {
+							$record[$i] = '40x' . $record[$i];
+						} else if ($i == 'assigned_user_id') {
+							$record[$i] = Vtiger_Functions::getUserRecordLabel($record[$i]);
+						}
+						else if ($i == 'contact_id') {
+							$record[$i] = Vtiger_Functions::getCRMRecordLabel($record[$i]);
+						}
 					}
 				}
 				$records[] = $record;
