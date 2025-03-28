@@ -10,7 +10,8 @@
 $languageStrings = array(
 	'LBL_ADD_RECORD' => 'Add Attendance',
 	'SINGLE_Attendance' => 'Attendance',
-	'LBL_ATTENDANCE_INFORMATION' =>'Attendance Details'
+	'LBL_ATTENDANCE_INFORMATION' =>'Attendance Details',
+	'Description' =>'Regularisation Reason'
 );
 
 

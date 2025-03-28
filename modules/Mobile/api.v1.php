@@ -42,7 +42,7 @@ class Mobile_APIV1_Controller {
 		'GetRecordDetail'           => array('file' => '/api/ws/GetRecordDetail.php',	        'class' => 'Mobile_WS_GetRecordDetail'),
         'GetCheckInCheckOutStatus'  => array('file' => '/api/ws/GetCheckInCheckOutStatus.php',	'class' => 'Mobile_WS_GetCheckInCheckOutStatus'),
 		'CheckOut'                  => array('file' => '/api/ws/CheckOut.php',               	'class' => 'Mobile_WS_CheckOut'),
-
+        'AttendanceRegularization'  => array('file' => '/api/ws/AttendanceRegularization.php',  'class' => 'Mobile_WS_AttendanceRegularization'),
 	);
 
 	protected function initSession(Mobile_API_Request $request) {

@@ -53,6 +53,10 @@ if(!defined('MOBILE_API_CONTROLLER_AVOID_TRIGGER')) {
 	    $clientRequestValues = stripslashes_recursive($clientRequestValues);
 	}
 
+    ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ERROR);
+
 	require_once dirname(__FILE__) . '/api.v1.php';
 	$targetController = Mobile_APIV1_Controller::getInstance();
 	$targetController->process(new Mobile_API_Request($clientRequestValues, $clientRequestValuesRaw));

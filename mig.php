@@ -1950,4 +1950,84 @@ if ($blockInstance) {
 } else {
     echo "Block Does not exits -- LBL_TICKET_INFORMATION in HelpDesk -- <br>";
 }
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('Attendance');
+$blockInstance = Vtiger_Block::getInstance('LBL_ATTENDANCE_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('working_status', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'working_status';
+        $fieldInstance->label = 'Working Status';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'working_status';
+        $fieldInstance->uitype = '16';
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(100)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+        $fieldInstance->setPicklistValues(array('Full Day', 'Half Day', 'On Leave'));
+    } else {
+        echo "field is already Present --- ticket_type in HelpDesk Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_CUSTOM_INFORMATION -- <br>";
+}
+
+$invoiceModule = null;
+$blockInstance = null;
+$fieldInstance = null;
+$invoiceModule = Vtiger_Module::getInstance('Attendance');
+$blockInstance = Vtiger_Block::getInstance('LBL_ATTENDANCE_INFORMATION', $invoiceModule);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('apply_regularisation', $invoiceModule);
+    if (!$fieldInstance) {
+        $field = new Vtiger_Field();
+        $field->name = 'apply_regularisation';
+        $field->column = 'apply_regularisation';
+        $field->table = $invoiceModule->basetable;
+        $field->label = 'Apply for Regularisation';
+        $field->uitype = 56;
+        $field->columntype = 'INT(1) DEFAULT 0';
+        $field->typeofdata = 'I~O';
+        $field->displaytype = 2;
+        $blockInstance->addField($field);
+    } else {
+        echo "field is present -- chargeable_outside_war In Contacts Module --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_BLOCK_GENERAL_INFORMATION in Contacts -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('Attendance');
+$blockInstance = Vtiger_Block::getInstance('LBL_CUSTOM_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('comments', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'comments';
+        $fieldInstance->label = 'SC Comment';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'comments';
+        $fieldInstance->uitype = '19';
+        $fieldInstance->quickcreate = 3;
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(64)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+    } else {
+        echo "field is already Present --- user_password in ServiceEngineer Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_USERLOGIN_ROLE -- <br>";
+}
+
 ?>

@@ -31,9 +31,9 @@
 		$entityName = $meta->getObjectEntityName($element['id']);
 		
 		$types = vtws_listtypes(null, $user);
-		if(!in_array($entityName,$types['types'])){
+		/*if(!in_array($entityName,$types['types'])){
 			throw new WebServiceException(WebServiceErrorCode::$ACCESSDENIED,"Permission to perform the operation is denied");
-		}
+		}*/
 		
 		if($entityName !== $webserviceObject->getEntityName()){
 			throw new WebServiceException(WebServiceErrorCode::$INVALIDID,"Id specified is incorrect");

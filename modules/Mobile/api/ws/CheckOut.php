@@ -11,7 +11,7 @@ class Mobile_WS_CheckOut extends Mobile_WS_Controller {
         $checkoutdate = $request->get('checkoutdate');
         $useruniqid = $request->get('useruniqid');
     
-        $sql = "select attendanceid from vtiger_attendance inner join vtiger_crmentity on vtiger_crmentity.crmid = vtiger_attendance.attendanceid
+        $sql = "select attendanceid,attedance_status from vtiger_attendance inner join vtiger_crmentity on vtiger_crmentity.crmid = vtiger_attendance.attendanceid
         where checkindate = ? and vtiger_crmentity.smownerid=? and vtiger_crmentity.deleted= 0";
 
         $sqlResult = $adb->pquery($sql, array($checkoutdate,$useruniqid));
@@ -28,6 +28,13 @@ class Mobile_WS_CheckOut extends Mobile_WS_Controller {
             $recordModel->set('checkout_longitude', $request->get('checkout_longitude'));
             $recordModel->set('attedance_status', $request->get('attedance_status'));
             $recordModel->save();
+
+            if($dataRow['attedance_status'] == 'Check Out'){
+                $response->setApiSucessMessage('You Already Check Out Successfully');
+                $responseObject['status'] = "Check Out";
+                $response->setResult($responseObject);
+                return $response;
+            }
 
             $response->setApiSucessMessage('Check Out Successfully');
             $responseObject['status'] = "Check Out";
