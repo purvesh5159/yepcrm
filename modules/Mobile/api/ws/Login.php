@@ -85,14 +85,14 @@ class Mobile_WS_Login extends Mobile_WS_Controller {
 			$dataRow = $adb->fetchByAssoc($sqlResult, 0);
 			$recordModel = Vtiger_Record_Model::getInstanceById($dataRow['engineerid'], 'Engineer');
             $emData = $recordModel->getData();
+			unset($emData['confirm_password']);
             unset($emData['confirm_password']);
-            unset($emData['user_password']);
-
 			$date = new DateTime();
 		
 			$emData['imagename'] = $this->getUserImageDetails($current_user->id);
 			$result = array(
 				'assign_user_id' => $current_user->id,
+				'servicecordintor_id' =>  '41x'.$emData['servicecordintor_id'],
 				'usercreatedid' => $data['engineerid'],
 				'usertype' => "Engineer",
 				'employeeWsId' => Mobile_WS_Utils::getEntityModuleWSId('Engineer'). 'x' . $data['engineerid'],

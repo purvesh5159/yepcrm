@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-25 12:41:50
+/* Smarty version 4.5.4, created on 2025-03-28 05:52:06
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\uitypes\OwnerFieldSearchView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67e2a48e599987_63237201',
+  'unifunc' => 'content_67e63906e3e563_79159521',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67e2a48e599987_63237201 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67e63906e3e563_79159521 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('FIELD_INFO', call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'vtlib_array' ][ 0 ], array( $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->getFieldInfo() )));?><div class="select2_search_div"><?php $_smarty_tpl->_assignInScope('ASSIGNED_USER_ID', $_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('name'));
 $_smarty_tpl->_assignInScope('ALL_ACTIVEUSER_LIST', $_smarty_tpl->tpl_vars['FIELD_INFO']->value['picklistvalues'][vtranslate('LBL_USERS')]);
 $_smarty_tpl->_assignInScope('SEARCH_VALUES', explode(',',(isset($_smarty_tpl->tpl_vars['SEARCH_INFO']->value['searchValue'])) ? $_smarty_tpl->tpl_vars['SEARCH_INFO']->value['searchValue'] : ','));

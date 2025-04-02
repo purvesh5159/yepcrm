@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-25 12:36:41
+/* Smarty version 4.5.4, created on 2025-04-01 11:23:58
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\ListColumnsEdit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67e2a3599f7c91_89415987',
+  'unifunc' => 'content_67ebccce1c4174_83353557',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67e2a3599f7c91_89415987 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67ebccce1c4174_83353557 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="modal-dialog modal-lg configColumnsContainer"><div class="modal-content"><?php ob_start();
 echo vtranslate('LBL_CONFIG_COLUMNS',$_smarty_tpl->tpl_vars['MODULE']->value);

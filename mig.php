@@ -2030,4 +2030,93 @@ if ($blockInstance) {
     echo " block does not exits --- LBL_USERLOGIN_ROLE -- <br>";
 }
 
+$invoiceModule = null;
+$blockInstance = null;
+$fieldInstance = null;
+$invoiceModule = Vtiger_Module::getInstance('StockTransfer');
+$blockInstance = Vtiger_Block::getInstance('LBL_STOCKTRANSFER_INFORMATION', $invoiceModule);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('contact_id', $invoiceModule);
+    if (!$fieldInstance) {
+        $field = new Vtiger_Field();
+        $field->name = 'contact_id';
+        $field->column = 'contact_id';
+        $field->uitype = 10;
+        $field->table = $invoiceModule->basetable;
+        $field->label = 'Contact Name';
+        $field->summaryfield = 1;
+        $field->readonly = 1;
+        $field->presence = 2;
+        $field->typeofdata = 'I~O';
+        $field->columntype = 'INT(10)';
+        $field->quickcreate = 3;
+        $field->displaytype = 1;
+        $field->masseditable = 1;
+        $field->defaultvalue = 0;
+        $blockInstance->addField($field);
+    } else {
+        echo "field is present -- contact_id HelpDesk --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_USERLOGIN_ROLE in HelpDesk -- <br>";
+}
+
+$invoiceModule = null;
+$blockInstance = null;
+$fieldInstance = null;
+$invoiceModule = Vtiger_Module::getInstance('StockTransfer');
+$blockInstance = Vtiger_Block::getInstance('LBL_STOCKTRANSFER_INFORMATION', $invoiceModule);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('parent_id', $invoiceModule);
+    if (!$fieldInstance) {
+        $field = new Vtiger_Field();
+        $field->name = 'parent_id';
+        $field->column = 'parent_id';
+        $field->uitype = 10;
+        $field->table = $invoiceModule->basetable;
+        $field->label = 'Ticket No';
+        $field->summaryfield = 1;
+        $field->readonly = 1;
+        $field->presence = 2;
+        $field->typeofdata = 'I~O';
+        $field->columntype = 'INT(10)';
+        $field->quickcreate = 3;
+        $field->displaytype = 1;
+        $field->masseditable = 1;
+        $field->defaultvalue = 0;
+        $blockInstance->addField($field);
+    } else {
+        echo "field is present -- contact_id HelpDesk --- <br>";
+    }
+} else {
+    echo "Block Does not exits -- LBL_USERLOGIN_ROLE in HelpDesk -- <br>";
+}
+
+$moduleInstance = null;
+$blockInstance = null;
+$fieldInstance = null;
+$moduleInstance = Vtiger_Module::getInstance('StockTransfer');
+$blockInstance = Vtiger_Block::getInstance('LBL_STOCKTRANSFER_INFORMATION', $moduleInstance);
+if ($blockInstance) {
+    $fieldInstance = Vtiger_Field::getInstance('st_status', $moduleInstance);
+    if (!$fieldInstance) {
+        $fieldInstance = new Vtiger_Field();
+        $fieldInstance->name = 'st_status';
+        $fieldInstance->label = 'Status';
+        $fieldInstance->table = $moduleInstance->basetable;
+        $fieldInstance->column = 'st_status';
+        $fieldInstance->uitype = '16';
+        $fieldInstance->presence = '0';
+        $fieldInstance->typeofdata = 'V~O';
+        $fieldInstance->columntype = 'VARCHAR(100)';
+        $fieldInstance->defaultvalue = NULL;
+        $blockInstance->addField($fieldInstance);
+        $fieldInstance->setPicklistValues(array('Approved', 'Rejected', 'Pending'));
+    } else {
+        echo "field is already Present --- ticket_type in HelpDesk Module --- <br>";
+    }
+} else {
+    echo " block does not exits --- LBL_CUSTOM_INFORMATION -- <br>";
+}
+
 ?>

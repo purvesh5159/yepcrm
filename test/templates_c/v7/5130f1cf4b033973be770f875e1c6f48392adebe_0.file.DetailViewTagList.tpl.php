@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-26 03:35:25
+/* Smarty version 4.5.4, created on 2025-03-28 05:51:55
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\DetailViewTagList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67e375fd25cff4_12435402',
+  'unifunc' => 'content_67e638fbbdf0a7_41672788',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67e375fd25cff4_12435402 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67e638fbbdf0a7_41672788 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="tagContainer">
     <div class="tag-contents <?php if (empty($_smarty_tpl->tpl_vars['TAGS_LIST']->value)) {?> hide<?php }?>">
         <div class="detailTagList" data-num-of-tags-to-show="<?php echo Vtiger_Tag_Model::NUM_OF_TAGS_DETAIL;?>

@@ -39,9 +39,9 @@
 			throw new WebServiceException(WebServiceErrorCode::$INVALIDID,"Id specified is incorrect");
 		}
 		
-		if(!$meta->hasPermission(EntityMeta::$UPDATE,$element['id'])){
+		/*if(!$meta->hasPermission(EntityMeta::$UPDATE,$element['id'])){
 			throw new WebServiceException(WebServiceErrorCode::$ACCESSDENIED,"Permission to read given object is denied");
-		}
+		}*/
 		
 		if(!$meta->exists($idList[1])){
 			throw new WebServiceException(WebServiceErrorCode::$RECORDNOTFOUND,"Record you are trying to access is not found");

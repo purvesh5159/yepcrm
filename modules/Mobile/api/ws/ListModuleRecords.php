@@ -116,6 +116,7 @@ class Mobile_WS_ListModuleRecords extends Mobile_WS_Controller {
 		}
 
 		$response = new Mobile_API_Response();
+		$response->setApiSucessMessage('Successfully Fetched Data');
 		$response->setResult(array(	'records'=>$records, 
 									'headers'=>$fields, 
 									'selectedFilter'=>$filterId, 

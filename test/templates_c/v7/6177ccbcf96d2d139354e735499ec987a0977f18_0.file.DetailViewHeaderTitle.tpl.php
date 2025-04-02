@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-26 03:35:24
+/* Smarty version 4.5.4, created on 2025-03-28 05:51:55
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\DetailViewHeaderTitle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67e375fc3c2ed6_71365203',
+  'unifunc' => 'content_67e638fb243742_41282229',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67e375fc3c2ed6_71365203 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67e638fb243742_41282229 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="col-lg-6 col-md-6 col-sm-6"><div class="record-header clearfix"><?php if (!$_smarty_tpl->tpl_vars['MODULE']->value) {
 $_smarty_tpl->_assignInScope('MODULE', $_smarty_tpl->tpl_vars['MODULE_NAME']->value);

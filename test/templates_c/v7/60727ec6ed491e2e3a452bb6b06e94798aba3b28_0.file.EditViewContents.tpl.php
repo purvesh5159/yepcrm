@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-25 12:33:45
+/* Smarty version 4.5.4, created on 2025-03-28 05:43:55
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Vtiger\partials\EditViewContents.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67e2a2a923b737_71290845',
+  'unifunc' => 'content_67e6371be63a52_55047148',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '60727ec6ed491e2e3a452bb6b06e94798aba3b28' => 
     array (
       0 => 'D:\\wamp\\www\\yepcrm\\layouts\\v7\\modules\\Vtiger\\partials\\EditViewContents.tpl',
-      1 => 1727609712,
+      1 => 1743140385,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67e2a2a923b737_71290845 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67e6371be63a52_55047148 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'D:\\wamp\\www\\yepcrm\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.count.php','function'=>'smarty_modifier_count',),));
 if (!empty($_smarty_tpl->tpl_vars['PICKIST_DEPENDENCY_DATASOURCE']->value)) {?><input type="hidden" name="picklistDependency" value='<?php echo Vtiger_Util_Helper::toSafeHTML($_smarty_tpl->tpl_vars['PICKIST_DEPENDENCY_DATASOURCE']->value);?>
 ' /><?php }?><div name='editContent'><?php if ((isset($_smarty_tpl->tpl_vars['DUPLICATE_RECORDS']->value)) && $_smarty_tpl->tpl_vars['DUPLICATE_RECORDS']->value) {?><div class="fieldBlockContainer duplicationMessageContainer"><div class="duplicationMessageHeader"><b><?php echo vtranslate('LBL_DUPLICATES_DETECTED',$_smarty_tpl->tpl_vars['MODULE']->value);?>
@@ -101,8 +101,8 @@ echo vtranslate($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('label'),$_sma
 }
 }?>&nbsp;<?php if ($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->isMandatory() == true) {?> <span class="redColor">*</span> <?php }?></td><?php if ($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('uitype') != '83') {?><td <?php ob_start();
 echo $_smarty_tpl->tpl_vars['MODULE']->value;
-$_prefixVariable6 = ob_get_clean();
-if (in_array($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('uitype'),array('19','69')) || $_smarty_tpl->tpl_vars['FIELD_NAME']->value == 'description' || (($_smarty_tpl->tpl_vars['FIELD_NAME']->value == 'recurringtype' || $_smarty_tpl->tpl_vars['FIELD_NAME']->value == 'reminder_time') && in_array($_prefixVariable6,array('Events','Calendar')))) {?> class="fieldValue fieldValueWidth80"  colspan="3" <?php $_smarty_tpl->_assignInScope('COUNTER', $_smarty_tpl->tpl_vars['COUNTER']->value+1);?> <?php } elseif ($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('uitype') == '56') {?> class="fieldValue checkBoxType" <?php } elseif ($_smarty_tpl->tpl_vars['isReferenceField']->value == 'reference' || $_smarty_tpl->tpl_vars['isReferenceField']->value == 'multireference') {?> class="fieldValue p-t-8" <?php } else { ?>class="fieldValue" <?php }?>><?php $_smarty_tpl->_subTemplateRender(vtemplate_path($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->getUITypeModel()->getTemplateName(),$_smarty_tpl->tpl_vars['MODULE']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+$_prefixVariable1 = ob_get_clean();
+if (in_array($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('uitype'),array('19','69')) || $_smarty_tpl->tpl_vars['FIELD_NAME']->value == 'description' || (($_smarty_tpl->tpl_vars['FIELD_NAME']->value == 'recurringtype' || $_smarty_tpl->tpl_vars['FIELD_NAME']->value == 'reminder_time') && in_array($_prefixVariable1,array('Events','Calendar')))) {?> class="fieldValue fieldValueWidth80"  colspan="3" <?php $_smarty_tpl->_assignInScope('COUNTER', $_smarty_tpl->tpl_vars['COUNTER']->value+1);?> <?php } elseif ($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->get('uitype') == '56') {?> class="fieldValue checkBoxType" <?php } elseif ($_smarty_tpl->tpl_vars['isReferenceField']->value == 'reference' || $_smarty_tpl->tpl_vars['isReferenceField']->value == 'multireference') {?> class="fieldValue p-t-8" <?php } else { ?>class="fieldValue" <?php }?>><?php $_smarty_tpl->_subTemplateRender(vtemplate_path($_smarty_tpl->tpl_vars['FIELD_MODEL']->value->getUITypeModel()->getTemplateName(),$_smarty_tpl->tpl_vars['MODULE']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?></td><?php }
 }
 }

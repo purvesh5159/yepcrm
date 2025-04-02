@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-26 04:49:18
+/* Smarty version 4.5.4, created on 2025-03-28 07:20:03
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Settings\Vtiger\SettingsMenuStart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67e3874e7074d5_59125314',
+  'unifunc' => 'content_67e64da341b1e0_20809968',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:modules/Settings/Vtiger/Sidebar.tpl' => 1,
   ),
 ),false)) {
-function content_67e3874e7074d5_59125314 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67e64da341b1e0_20809968 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:modules/Vtiger/partials/Topbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

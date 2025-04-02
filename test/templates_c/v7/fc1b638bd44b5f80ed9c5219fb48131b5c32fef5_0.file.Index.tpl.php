@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.5.4, created on 2025-03-26 04:49:24
+/* Smarty version 4.5.4, created on 2025-04-01 07:59:32
   from 'D:\wamp\www\yepcrm\layouts\v7\modules\Settings\LayoutEditor\Index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.4',
-  'unifunc' => 'content_67e387548afb20_32750004',
+  'unifunc' => 'content_67eb9ce44ced92_95401464',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67e387548afb20_32750004 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67eb9ce44ced92_95401464 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="container-fluid main-scroll paddingTop15" id="layoutEditorContainer"><input id="selectedModuleName" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['SELECTED_MODULE_NAME']->value;?>
 " /><input class="selectedTab" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['SELECTED_TAB']->value;?>

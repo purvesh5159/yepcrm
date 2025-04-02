@@ -43,6 +43,12 @@ class Mobile_APIV1_Controller {
         'GetCheckInCheckOutStatus'  => array('file' => '/api/ws/GetCheckInCheckOutStatus.php',	'class' => 'Mobile_WS_GetCheckInCheckOutStatus'),
 		'CheckOut'                  => array('file' => '/api/ws/CheckOut.php',               	'class' => 'Mobile_WS_CheckOut'),
         'AttendanceRegularization'  => array('file' => '/api/ws/AttendanceRegularization.php',  'class' => 'Mobile_WS_AttendanceRegularization'),
+	    'GetPickListValues'         => array('file' => '/api/ws/GetPickListValues.php',         'class' => 'Mobile_WS_GetPickListValues'),
+		'GetSRListByTicketid'       => array('file' => '/api/ws/GetSRListByTicketid.php',       'class' => 'Mobile_WS_GetSRListByTicketid'),
+        'GetFollowUpListByTicketid' => array('file' => '/api/ws/GetFollowUpListByTicketid.php', 'class' => 'Mobile_WS_GetFollowUpListByTicketid'),
+        'GetCommentListByTicketid' => array('file' => '/api/ws/GetCommentListByTicketid.php',   'class' => 'Mobile_WS_GetCommentListByTicketid'),
+		'GetNotification'          => array('file' => '/api/ws/GetNotification.php',            'class' => 'Mobile_WS_GetNotification'),
+
 	);
 
 	protected function initSession(Mobile_API_Request $request) {
